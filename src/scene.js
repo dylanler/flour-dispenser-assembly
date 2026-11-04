@@ -1,6 +1,7 @@
 import * as T from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { powerLayout } from './power-layout.js';
 
 const colors = { cradle: '#9bbab0', hopper: '#d77857', gate: '#d8af57', lid: '#e3c79b', servo: '#365cba', pcb: '#23433d', red: '#b94a3f', black: '#33433c', signal: '#dca14d', pwm: '#437ea8' };
 export async function makeScene(host) {
@@ -55,20 +56,24 @@ export async function makeScene(host) {
   box(7.5,8,3.5,'#b7bdb6',[-27,0,-1],esp);box(5.5,6,.4,'#34473f',[-31,0,-1],esp);
   for(let i=0;i<15;i++) for(const y of [-13,13])box(.6,.6,6,'#cfba75',[-18+i*2.54,y,-3.5],esp);
   const power = new T.Group(); scene.add(power);
-  // USB-A plug and a cut power lead. The two enlarged sleeves depict insulated splices.
-  box(12,7,4,'#b7c0b9',[-13,0,0],power);box(10,11,7,'#3f4941',[-4,0,0],power);
-  line([[0,0,0],[5,0,0],[10,3,0],[18,5,0]],colors.red,.7,power);
-  line([[0,0,0],[5,0,0],[10,-3,0],[18,-5,0]],colors.black,.7,power);
-  box(8,2.4,2.4,'#a8493f',[13,5,0],power);box(8,2.4,2.4,'#35453d',[13,-5,0],power);
-  const brick = new T.Group();scene.add(brick);box(45,28,36,'#f1eee1',[145,15,70],brick);box(.8,8,15,'#3b4940',[167.6,8,70],brick);
+  // User's USB-A male -> four screw terminals. Dimensions/pin order are illustrative.
+  // The plug enters the brick's +X side; wires exit the adapter's opposite (+X) end.
+  box(11,4.5,12,'#b7c0b9',[-14.5,0,0],power);
+  box(20,9,18,'#303c35',[0,0,0],power);
+  box(14,10,24,'#70a287',[17,0,0],power);
+  for (const z of [-7.5,-2.5,2.5,7.5]) {
+    cylinder(1.7,.6,'#b4bdb6',[17,5.25,z],power);
+    box(2.1,.15,.4,'#3b4940',[17,5.6,z],power);
+    const entry=cylinder(1.25,.4,'#243c2d',[24.1,-.5,z],power);entry.rotation.z=Math.PI/2;
+  }
+  const brick = new T.Group();scene.add(brick);box(...powerLayout.brickSize,'#f1eee1',powerLayout.brickCenter,brick);box(.6,8,15,'#29382e',powerLayout.portCenter,brick);
   const scale = new T.Group();scene.add(scale);box(105,17,125,'#343f3a',[0,8.5,0],scale);box(101,1,96,'#b6bfbb',[0,17,-12],scale);box(46,.7,14,'#457ca9',[0,17.4,48],scale);
   for(const x of [-40,40])cylinder(5,.8,'#a8b4ac',[x,17.4,48],scale);
   const cup = new T.Group(); scene.add(cup); cylinder(30,80,'#c2cbb7',[0,58,0],cup); cylinder(28,1,'#687d67',[0,98,0],cup);
   const wires = new T.Group(); scene.add(wires);
   const wireSets=[];
   function wire(stage,points,color){const m=line(points,color,.65,wires);wireSets.push({m,stage});}
-  wire(5,[[199,13,70],[170,8,86],[145,40,75],[123,73,30]],colors.red);
-  wire(5,[[199,3,70],[170,4,80],[140,30,70],[123,70,30]],colors.black);
+  powerLayout.routes.forEach(route=>wire(5,route.points,route.color));
   wire(5,[[-122,48,-15],[-140,15,-90],[145,12,-90],[123,70,0]],colors.black);
   wire(6,[[0,195,26],[50,223,40],[125,200,55],[138,130,50],[123,73,-10]],colors.red);
   wire(6,[[3,195,26],[55,219,44],[129,197,59],[142,125,55],[123,70,-10]],colors.black);
@@ -78,15 +83,15 @@ export async function makeScene(host) {
   wire(7,[[39,204,17],[50,235,-5],[-145,230,-75],[-140,100,-65],[-122,55,-10]],colors.signal);
   wire(8,[[-117,50,31],[-146,45,80],[-175,4,100],[-230,3,130]],'#717a71');
   const labels = document.querySelector('#callouts');
-  const labelData=[['SG90 · shaft down',[35,224,0],2,3],['VCC · GND · IN',[0,211,37],3,3],['400-point breadboard',[124,83,0],4,8],['ESP32 · USB-C',[-123,76,0],4,8],['USB-A brick · cut lead',[170,38,75],5,7],['GPIO19 → IN',[-80,230,70],6,6],['GPIO18 → servo',[80,240,10],7,7],['Supplied servo horn · not printed',[35,173,0],10,11],['Front locking clip',[-25,194,52],13,14],['Rear locking clip',[85,194,-52],13,14],['105 × 125 × 17 mm · 500 g scale',[0,22,55],12,16]];
+  const labelData=[['SG90 · shaft down',[35,224,0],2,3],['VCC · GND · IN',[0,211,37],3,3],['400-point breadboard',[124,83,0],4,8],['ESP32 · USB-C',[-123,76,0],4,8],['Side USB port → adapter → two power leads',[199,42,120],5,5],['GPIO19 → IN',[-80,230,70],6,6],['GPIO18 → servo',[80,240,10],7,7],['Supplied servo horn · not printed',[35,173,0],10,11],['Front locking clip',[-25,194,52],13,14],['Rear locking clip',[85,194,-52],13,14],['105 × 125 × 17 mm · 500 g scale',[0,22,55],12,16]];
   const labelEls=labelData.map(([text])=>{const e=document.createElement('div');e.className='callout';e.textContent=text;labels.append(e);return e;});
   function resize(){ const {width,height}=host.getBoundingClientRect(); renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix(); }
   new ResizeObserver(resize).observe(host); resize();
   let stage=-1, manual=false;orbit.addEventListener('start',()=>manual=true);
   const smooth=t=>t*t*(3-2*t);
   function setCamera(i){manual=false;
-    const pos=i===0?[380,480,450]:i===2||i===3?[220,320,270]:i===4?[400,160,230]:i===8?[-360,180,270]:i===10?[200,290,170]:i===11?[250,180,65]:i===13?[300,290,340]:i===16?[300,170,420]:[365,285,430];
-    const target=i===0?[0,55,0]:i===2||i===3?[15,210,0]:i===4?[20,75,0]:i===8?[-80,110,0]:i===10?[35,168,0]:i===11?[35,204,0]:i===13?[25,180,0]:i===16?[0,120,40]:[0,115,0];
+    const pos=i===0?[380,480,450]:i===2||i===3?[220,320,270]:i===4?[400,160,230]:i===5?[390,180,330]:i===8?[-360,180,270]:i===10?[200,290,170]:i===11?[250,180,65]:i===13?[300,290,340]:i===16?[300,170,420]:[365,285,430];
+    const target=i===0?[0,55,0]:i===2||i===3?[15,210,0]:i===4?[20,75,0]:i===5?[170,38,78]:i===8?[-80,110,0]:i===10?[35,168,0]:i===11?[35,204,0]:i===13?[25,180,0]:i===16?[0,120,40]:[0,115,0];
     camera.position.set(...pos);orbit.target.set(...target);orbit.update();}
   function update(i,p,time){
     if(i!==stage){stage=i;setCamera(i);} const e=smooth(Math.min(1,p*2));
@@ -102,7 +107,7 @@ export async function makeScene(host) {
     hopper.visible=i!==10;servo.visible=i>=2&&i!==10;servoTies.visible=i>=2;servo.position.set(0,i===2?45*(1-e):0,0);
     motor.visible=i>=3&&i!==10;motor.position.set(0,20,21+(i===3?45*(1-e):0));motor.rotation.x=.396;
     electronics.visible=i>=4&&i!==10&&i!==11;breadboard.position.set(116+(i===4?55*(1-e):0),50,0);breadboard.rotation.y=Math.PI/2;esp.position.set(-116-(i===4?55*(1-e):0),50,0);esp.rotation.y=Math.PI/2;
-    power.visible=i>=5;brick.visible=i>=5;power.position.set(181,8,70);power.rotation.x=0;
+    power.visible=i>=5;brick.visible=i>=5;power.position.set(...powerLayout.adapterOrigin);power.rotation.x=0;
     wires.visible=i>=5&&i!==10&&i!==11;wireSets.forEach(({m,stage:s})=>{m.visible=i>=s;const count=m.geometry.index.count;m.geometry.setDrawRange(0,i===s?Math.floor(count*e/3)*3:count);});
     gate.visible=i===0||i>=10;horn.visible=i>=10;hornTies.visible=i>=10;screw.visible=i>=11;
     if(i===10){gateRoot.position.set(35,-42,55*(1-e));horn.position.y=16*(1-e);}

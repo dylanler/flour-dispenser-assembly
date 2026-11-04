@@ -10,7 +10,7 @@ Disconnect external 5V to the servo/motor before flashing. Use a USB-C **data** 
 
 ## 2. Install computer tools on your MacBook
 
-Plug the ESP32 directly into your MacBook using a USB-C **data** cable. This supplies the ESP32 for programming and normal operation. Keep that cable intact. The servo and vibration module use your **5V USB-A power brick through a separate spare cut USB-A cable**, with secure insulated joints and common ground. No terminal adapter is included. This build does not route their power through the ESP32 USB/5V pin; that board's power-path rating is unverified. See [Wiring](WIRING.md) for preparing the cut lead; the "power junction" is just the breadboard buses.
+Plug the ESP32 directly into your MacBook using a USB-C **data** cable. This supplies the ESP32 for programming and normal operation. Keep that cable intact. The servo and vibration module use your **5V USB-A brick through the four-terminal screw-terminal adapter**, with common ground. Use its marked +5V and GND terminals only; D+ and D− stay empty. No cable cutting or soldering is needed for that connection. This build does not route their power through the ESP32 USB/5V pin; that board's power-path rating is unverified. See [Wiring](WIRING.md) for connecting the adapter; the "power junction" is just the breadboard buses.
 
 From the repository folder in Terminal, with Python 3.10 or newer installed:
 

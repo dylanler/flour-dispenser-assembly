@@ -1,17 +1,25 @@
-# Wiring — existing 5V PWM module and cut USB-A power lead
+# Wiring — existing 5V PWM module and four-terminal USB-A adapter
 
-Disconnect USB and external power while wiring. Match labels printed on your boards, not physical pin order in a drawing. The ESP32 is mounted separately from the breadboard so its width does not block terminal holes.
+Disconnect USB and external power while wiring. Match labels printed on your boards, not physical pin order in a drawing. The ESP32 mounts separately from the breadboard.
 
-Your MacBook USB-C connection programs **and powers the ESP32**. Your USB-A power brick supplies the servo and motor through a **spare cut USB-A cable**: **verified +5V conductor → +5V bus; verified GND conductor → ground bus**. Check the brick is rated for 5V output; 2A gives useful headroom. Join ESP32 GND to the same ground bus. This design does not draw motor/servo current through the ESP32 board.
+Your **MacBook USB-C powers/programs the ESP32**. Your **5V USB-A brick → USB-A male to four screw terminals → two jumper leads → breadboard** supplies the servo and motor. The adapter is the solderless type shown by the user; no cable cutting or splicing is needed. Use a regulated 5V brick, preferably rated 2A. Join ESP32 GND to the breadboard ground bus.
 
-The breadboard buses are the "power junction," not a separate purchased component. **No terminal adapter is required.** Unplug before cutting the spare cable, strip the cut end and verify the conductors with a meter. Red/black are common +5V/GND colors but are not guaranteed. Insulate each unused conductor separately. Use proper insulated joints from the power conductors to solid jumper ends: connectors you already own, or solder plus insulation. Do not insert loose stranded cable ends into the breadboard or servo socket, and do not rely on twist-and-tape joints. If you lack suitable connectors, this approach requires soldering.
+## Adapter connection and orientation
 
-Use the servo's existing socket with jumper pins; its power can come from these breadboard buses without cutting the servo lead. Support and strain-relieve the cut cable on the bench. Before connecting any electronics, verify the brick/cable polarity and check that the buses are not shorted. Then unplug again while making connections.
+1. Unplug the brick. Insert two suitable solid jumper ends into the adapter terminals marked **+5V / VCC / VBUS** and **GND / −**. Tighten securely and tug-check; no exposed strands/metal may bridge terminals.
+2. Connect +5V to the positive breadboard bus and GND to the ground bus. Leave **D+ and D− empty**. Do not infer order from the four positions in the model; read the real adapter's markings. Verify 5V output and polarity before attaching electronics, then unplug again to complete wiring.
+3. Plug the adapter's metal USB-A end directly into the brick's USB-A socket. Support both beside the stand and relieve wire tension. In the animation, the brick lies on its side; its port faces the adapter, and the two leads leave the green terminal block at the **opposite end**. The brick itself has no added top wire connections. The AC input/plug is omitted from the model.
+
+The listing's “300V / 8A” terminal rating does not describe USB output; the brick provides 5V. An adapter does not increase its available current. If terminal labels are absent, identify the connections by documentation/continuity rather than guessing. Never connect the power bus to D+ or D−. In particular, **D− is a data terminal, not ground**; use the terminal explicitly identified as GND.
+
+![Power adapter orientation and connections](../public/hardware/power_connection.svg)
+
+The breadboard buses are the “power junction,” not another module. Keep the servo's existing socket and use jumper pins; do not cut the servo cable. See [Parts](PARTS.md) for the six female-to-male and five male-to-male leads used here.
 
 | From | To |
 |---|---|
-| External regulated +5V | Breadboard positive bus |
-| External supply GND | Breadboard ground bus |
+| Adapter +5V / VCC / VBUS | Breadboard positive bus |
+| Adapter GND / − | Breadboard ground bus |
 | ESP32 GND | Same ground bus |
 | Servo red | +5V bus |
 | Servo brown/black | Ground bus |

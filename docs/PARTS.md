@@ -8,16 +8,26 @@ Use your ordered items. Links below are the known listing or clearly labeled Ama
 | DIY-Module / GODIYMODULES 5V PWM vibration module, 9000 RPM | One **three-pin module with driver**, not a bare coin motor | [Amazon listing B0DY65KVQR](https://www.amazon.com/dp/B0DY65KVQR) |
 | WWZMDiB SG90 servo pack | One servo, its double-arm horn and supplied center screw | [Amazon search](https://www.amazon.com/s?k=WWZMDiB+SG90+Micro+Servo+Motor+3+Pcs) |
 | BOJACK 830/400-point breadboard + jumper kit | One 400-point board; the ESP32 mounts separately | [Amazon search](https://www.amazon.com/s?k=BOJACK+3+Values+130+Pcs+Solderless+Breadboard) |
+| USB-A male to 4-pin screw-terminal adapter, two-pack shown by the user | One adapter plugs into the USB-A brick; only +5V and GND are wired | [Amazon search matching the shown type](https://www.amazon.com/s?k=USB+2.0+Type+A+Male+to+4+Pin+Screw+Terminal+Block+Connector) |
 
-Home supplies to check: USB-C **data** cable for the MacBook/ESP32, regulated 5V USB-A brick, a **spare USB-A cable to cut**, suitable existing splice connectors or solder and insulation, solid breadboard jumpers, multimeter, PLA, small zip ties, insulating foam tape, thin firm mounting tape, thin card shims, screwdriver, cutters and a cup. No terminal adapter, MB102 module, SN74AHCT125N, 10k resistor, or 0.1µF capacitor is part of this version.
+Home supplies to check: USB-C **data** cable for the MacBook/ESP32, regulated 5V USB-A brick, solid-ended breadboard jumper leads, multimeter, PLA, small zip ties, insulating foam tape, thin firm mounting tape, thin card shims, screwdriver, cutters and a cup. This version uses the four-terminal USB-A adapter shown by the user. No cut cable, splice connectors, soldering, MB102 module, SN74AHCT125N, 10k resistor or 0.1µF capacitor is required for the proposed wiring if the boards have headers fitted.
 
-Your USB-A power brick supplies the servo and motor through the cut USB-A cable. Check the brick's label for regulated **5V** output; **2A** gives useful headroom for servo current peaks. A 2A supply does not force 2A through the motor. Exact SG90 clone stall current remains unmeasured.
+The brick supplies the servo and motor through the adapter. Check the brick's label for regulated **5V** output; **2A** gives useful headroom for servo peaks. The adapter is passive; it does not generate or regulate power. The listing's **300V / 8A** describes terminal hardware, not USB output. The exact SG90 clone stall current remains unmeasured.
 
-The **power junction** is simply the breadboard +5V and ground buses; it is not another module to buy. This version follows the requested cut-cable approach. Its two power conductors need proper insulated joints to solid jumpers. Use suitable connectors already at home, or solder plus heat-shrink/equivalent insulation. It is not an entirely plug-in assembly anymore, and no-solder operation depends on having suitable connectors.
+With the brick unplugged, clamp two suitable solid jumper ends in **+5V / VCC / VBUS** and **GND / −**; tighten, tug-check and keep exposed metal from bridging terminals. Leave **D+ / D−** empty. Connect the jumper ends to the breadboard positive and ground buses. Existing male-to-male jumper ends can be used if the screws securely clamp them; otherwise use appropriately sized solid-core breadboard wire. Confirm the actual terminal labels and output polarity rather than copying a left/right position from the animation. Do not cut your USB-C programming cable or a USB-A cable.
 
-Unplug the spare USB-A cable before cutting. Keep the USB-A plug and strip the cut end. Identify +5V and GND with a meter or continuity to the connector contacts; colors alone are not proof. Connect only those verified conductors to the matching breadboard buses, through secure insulated joints and solid jumper ends. Insulate each unused conductor separately. Keep cut strands out of servo sockets and breadboard contacts. Support the cable on the bench and add strain relief so a tug cannot pull out the breadboard leads. Keep your ESP32 programming cable intact.
+The **power junction** is simply the breadboard +5V and ground buses. Support the brick/adapter beside the stand so cable tension does not load the USB connector. The adapter model is illustrative: the plug enters the brick's side port and leads leave the opposite end of the green block. The AC connection to the brick is omitted from the illustration; this build has no mains-side wiring instructions.
 
-Check jumper **ends**, not just the count. The ESP32/module male headers need female sockets. Many BOJACK flexible jumper kits contain only male-to-male wires. If your home wires do not include female ends, pre-crimped male-to-female Dupont leads are the remaining wiring purchase: [Amazon search](https://www.amazon.com/s?k=male+to+female+dupont+jumper+wires). Signals can pass through spare breadboard terminal groups so male-to-female leads suffice; female-to-female leads are optional. Board headers must arrive fitted to avoid soldering those headers.
+### Jumper ends and quantities
+
+| Connection | Leads |
+|---|---|
+| ESP32 GND, GPIO18 and GPIO19 to breadboard | 3 female-to-male |
+| Vibration-module VCC, GND and IN to breadboard | 3 female-to-male |
+| SG90 three-hole socket to breadboard | 3 male-to-male |
+| Adapter +5V and GND to breadboard | 2 suitable solid-ended male-to-male / solid-core wires |
+
+Plan on **6 female-to-male** and **5 male-to-male** leads, plus any bridges needed for split breadboard rails. This assumes the ESP32 and module arrive with male headers fitted. Female sockets fit those headers; male ends fit the breadboard. The servo has a female socket, so it uses male jumper ends. The BOJACK kit may contain only male-to-male leads; check your existing wires. If needed: [Amazon search for pre-crimped male-to-female Dupont leads](https://www.amazon.com/s?k=male+to+female+dupont+jumper+wires). Female-to-female leads are optional if using breadboard junctions for both signal nets.
 
 A multimeter is useful for identifying rail continuity, checking 5V output and screening the motor input before connection. Those checks cannot establish an undocumented input threshold by themselves. If the module circuit cannot be verified, leave its IN disconnected and use gate-only tests until resolved.
 
@@ -29,4 +39,4 @@ The 400-point breadboard is illustrated at about 82 × 55 mm on the **right oute
 
 Your scale is modeled at 105 × 125 × 17 mm and 500 g maximum. The clear bay is 200 mm wide. The illustrated cup is diameter 60 mm × height 80 mm, an assumption until the real container is specified. The robot collects that cup from the open front; exact arm/gripper compatibility still needs testing. See [Robot clearance](ROBOT_CLEARANCE.md).
 
-The clips use about a 0.6 mm nominal hook engagement in an underside recess. Print on the supplied broad side; do not rotate them upright. Inspect the hook, clear rough edges, and test the snap/release without forcing it. Clip strength and fatigue remain untested. The USB-A brick and insulated cable joints stay beside the stand with strain relief.
+The clips use about a 0.6 mm nominal hook engagement in an underside recess. Print on the supplied broad side; do not rotate them upright. Inspect the hook, clear rough edges, and test the snap/release without forcing it. Clip strength and fatigue remain untested. The USB-A brick and four-terminal adapter stay beside the stand with strain relief.

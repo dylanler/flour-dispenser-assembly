@@ -1,6 +1,6 @@
 # Flour / V3 — wide scale bay, printed locking clips
 
-A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches, frame screws or electronics are required.
+A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.
 
 **[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Download video](https://dylanler.github.io/flour-dispenser-assembly/flour-v3-assembly.webm) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
@@ -33,7 +33,9 @@ The clips print flat on their broad side, with flexure within the layers. PLA is
 
 ## Power and Python
 
-**5V USB-A brick → spare cut USB-A cable → secure insulated joints to solid jumpers → breadboard buses → servo + vibration module.** The **MacBook USB-C cable powers/programs the ESP32** separately. Grounds are common. No terminal adapter or MB102 module is included. Cutting the power cable requires suitable existing connectors or solder and insulation; the build is not entirely plug-in.
+**5V USB-A brick → four-terminal USB-A male screw-terminal adapter → two jumper leads → breadboard buses → servo + vibration module.** The **MacBook USB-C cable powers/programs the ESP32** separately. Grounds are common. Use only the adapter terminals marked +5V / VCC / VBUS and GND / −; leave D+ and D− empty. No cable cutting, splicing or soldering is needed for this power connection. Match the real terminal markings; the illustrated terminal order is not a verified pin map. The brick lies on its side in the animation, its USB port facing the adapter, with wires leaving the far green block.
+
+![USB-A adapter plugged into the side port with two power leads](public/hardware/power_adapter_preview.png)
 
 **GPIO18 → servo signal; GPIO19 → vibration module IN**, conditional on verifying that the actual module accepts 3.3V control with its 5V supply. Do not connect external +5V to ESP32 GPIOs, 3V3 or USB power. See [wiring](docs/WIRING.md) and [motor research](docs/RESEARCH.md).
 

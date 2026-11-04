@@ -13,7 +13,7 @@ No physical tests have established the clips' insertion force, release force, fa
 ## Software checks completed
 
 - Production Vite build succeeded with Node 22.23.4; npm audit reported zero known vulnerabilities at installation time.
-- Two JavaScript tests cover all timeline boundaries and presence of key assembly constraints.
+- Four JavaScript tests cover timeline boundaries, key assembly constraints, correct screw-terminal wire exits and clearance of the complete curved leads from the brick. The wire test samples the actual Three.js Catmull–Rom curves, including their tube radius, rather than just checking control points.
 - Eight CPython unit/integration tests exercise the actual controller and HTTP handler with mocked PWM hardware: boot state, unverified motor rejection, gate-only operation, startup kick, dose deadline, arm expiry, duplicate-dose rejection, input bounds, calibration, configuration and Stop.
 - Headless Chrome loaded the actual STL scene with no page errors. All 17 chapter buttons, previous/next, playback/pause, desktop layout and 390 px mobile layout were checked. Browser control-page checks confirmed that calibration, motor verification and dose inputs produce the intended JSON requests.
 - The app exported a captioned WebM walkthrough from its own Three.js renderer. Source geometry is the supplied print geometry; electronics/cable illustrations are approximate.
