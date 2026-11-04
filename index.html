@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f3ed" />
+  <meta name="description" content="An interactive Three.js assembly film for the four-piece flour dispenser, including servo, retaining bands and complete ESP32 electronics." />
+  <title>Flour / V2 — Assembly film</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Flour V2 home"><span class="brand-mark">f<span>·</span></span><span>FLOUR <i>/</i> V2</span></a>
+    <span class="edition">THE ASSEMBLY FILM <span class="edition-line"></span> 01</span>
+    <nav><a href="hardware/BUILD_GUIDE_V2.html" target="_blank" rel="noopener">Build guide ↗</a><a href="hardware/A1_SIMPLE_V2_ONE_PLATE.3mf" download>Print files ↓</a><a href="https://github.com/dylanler/flour-dispenser-assembly" target="_blank" rel="noopener" class="github-link">GitHub ↗</a></nav>
+  </header>
+  <main class="workshop">
+    <aside class="chapters">
+      <div class="section-label">THE BUILD <span id="total-duration"></span></div>
+      <h1>From one plate<br>to first dose<span>.</span></h1>
+      <p class="intro">Four printed pieces.<br>One servo screw. Every wire.</p>
+      <ol id="chapter-list" aria-label="Assembly chapters"></ol>
+      <a class="wiring-link" href="hardware/AMAZON_MOTOR_REPLACEMENT.html" target="_blank" rel="noopener">Full wiring reference <span>↗</span></a>
+    </aside>
+    <section class="viewer-column" aria-label="Interactive assembly animation">
+      <div class="viewer" id="viewer">
+        <div class="scene-kicker"><span class="status-dot"></span><span id="scene-mode">PRINTED PARTS + ELECTRONICS</span></div>
+        <div class="view-actions"><button id="reset-view" title="Restore the chapter camera" aria-label="Reset camera">↺</button><button id="focus-view" title="Hide panels for a larger view" aria-label="Toggle large view">⛶</button></div>
+        <div id="canvas-host"></div>
+        <div id="callouts" aria-hidden="true"></div>
+        <div id="loading"><span class="loader"></span><span>Setting the workbench…</span></div>
+        <div id="scene-error" role="alert" hidden></div>
+        <div class="viewer-caption"><span>DRAG TO ORBIT · SCROLL TO ZOOM</span><span id="geometry-note">Actual printable STL geometry</span></div>
+        <div class="legend"><span><i style="--swatch:#9bbab0"></i>Cradle</span><span><i style="--swatch:#d77857"></i>Hopper</span><span><i style="--swatch:#d8af57"></i>Gate</span><span><i style="--swatch:#365cba"></i>Servo</span></div>
+      </div>
+      <div class="transport">
+        <div class="timeline-row"><span id="elapsed">0:00</span><input id="timeline" type="range" min="0" max="100" step="0.01" value="0" aria-label="Animation timeline" /><span id="duration">0:00</span></div>
+        <div class="control-row"><div class="play-controls"><button id="previous" aria-label="Previous chapter" title="Previous chapter">↤</button><button id="play" class="play-button">▶ <span>Play build</span></button><button id="next" aria-label="Next chapter" title="Next chapter">↦</button></div><div class="secondary-controls"><label class="speed-label" for="speed">Speed</label><select id="speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select><button id="record" title="Record the complete walkthrough as a captioned WebM video">↓ Export video</button></div></div>
+        <div id="record-status" role="status" hidden></div>
+      </div>
+    </section>
+    <aside class="instructions" aria-live="polite" aria-atomic="false">
+      <div class="section-label">STEP <span id="step-counter">01 / 17</span></div>
+      <h2 id="step-title"></h2><p id="step-description"></p>
+      <div id="step-points"></div>
+      <div class="connection-box" id="connection-box" hidden><div class="section-label">CONNECTIONS IN THIS STEP</div><table><tbody id="connections"></tbody></table></div>
+      <div class="step-note" id="step-note"></div>
+      <button id="step-next" class="step-next">Next step <span>→</span></button>
+      <div class="prototype-note"><span class="tiny-dot"></span>Prototype, physically untested.<br>Electronics and cable routing are illustrative; match the labels on your parts.</div>
+    </aside>
+  </main>
+  <footer><span>A SMALL MACHINE, EXPLAINED.</span><span>ONE A1 PLATE <i>·</i> ESP32 <i>·</i> SOLDERLESS BREADBOARD</span><a href="flour-v2-assembly.webm" download>Download rendered video ↓</a></footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

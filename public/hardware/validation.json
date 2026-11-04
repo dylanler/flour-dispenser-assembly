@@ -1,0 +1,51 @@
+{
+  "status": "Digital mesh and assembly checks passed; not physically tested",
+  "printed_parts": 4,
+  "structural_screws": 0,
+  "servo_horn_screws": 1,
+  "plate_bounds_mm": [
+    [
+      14,
+      12,
+      0
+    ],
+    [
+      247,
+      242,
+      92
+    ]
+  ],
+  "gate_top_clearance_mm": 0.6,
+  "rotor_sweep_checked_degrees": [
+    -70,
+    70
+  ],
+  "drop_in_pocket_mm": [
+    125,
+    105
+  ],
+  "hopper_flange_mm": [
+    124,
+    104
+  ],
+  "limitations": [
+    "Hopper is gravity-seated, not latched: two retaining bands required before powered testing",
+    "SG90 horn height requires packing adjustment",
+    "Flour flow, vibration and shutoff are untested",
+    "Gate is not sealed or fail-closed"
+  ],
+  "slicer": {
+    "status": "PASS",
+    "slicer": "Bambu Studio 2.5.00.66",
+    "printer": "Bambu Lab A1 0.4",
+    "objects": 4,
+    "outside_plate": "false",
+    "support_used": "false",
+    "predicted_seconds": 23459,
+    "predicted_grams": 220.75,
+    "settings": "0.2mm, 3 walls, 5 top/bottom, 20% gyroid, Generic PLA, no supports",
+    "physical_tested": false
+  },
+  "retention_correction": "Two retaining bands required before powered testing; band retention has not been physically validated.",
+  "firmware": "MicroPython; host state-machine and HTTP tests, not flashed or hardware-tested"
+}

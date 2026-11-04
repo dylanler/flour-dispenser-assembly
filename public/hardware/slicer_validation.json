@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "slicer": "Bambu Studio 2.5.00.66",
+  "printer": "Bambu Lab A1 0.4",
+  "objects": 4,
+  "outside_plate": "false",
+  "support_used": "false",
+  "predicted_seconds": 23459,
+  "predicted_grams": 220.75,
+  "settings": "0.2mm, 3 walls, 5 top/bottom, 20% gyroid, Generic PLA, no supports",
+  "physical_tested": false
+}

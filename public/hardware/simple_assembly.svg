@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430"><style>text{font-family:Arial;font-size:19px;fill:#173742}.b{font-size:25px;font-weight:bold}</style><rect width="1000" height="430" fill="#eef3f1" rx="18"/><text x="30" y="40" class="b">Only four printed pieces; one servo screw</text>
+<path d="M140 75H290L245 165H185Z" fill="none" stroke="#c58d49" stroke-width="8"/><rect x="115" y="165" width="290" height="12" fill="#d6aa65"/>
+<rect x="300" y="80" width="55" height="70" fill="#344b77"/><path d="M327 150V196" stroke="#173742" stroke-width="7"/>
+<rect x="291" y="150" width="13" height="15" fill="#d6aa65"/><rect x="356" y="150" width="13" height="15" fill="#d6aa65"/>
+<rect x="190" y="189" width="190" height="20" fill="#779fc5"/>
+<path d="M105 170V220H415V170M105 220V355M415 220V355" fill="none" stroke="#7da7a4" stroke-width="17"/>
+<path d="M450 116H365M450 174H415M450 206H388M450 280H425" fill="none" stroke="#173742" stroke-width="2"/>
+<text x="470" y="120">Servo stays on TOP; shaft points DOWN</text>
+<text x="470" y="178">Hopper drops into cradle - no frame screws</text>
+<text x="470" y="210">Gate hangs beneath hopper on servo horn</text>
+<text x="470" y="245">Only screw: supplied horn screw, from below</text>
+<text x="470" y="284">Cradle is one print; REQUIRED bands retain hopper</text>
+<text x="470" y="325">Keep 0.4-0.8 mm gate-to-hopper clearance</text>
+<text x="30" y="398">Lid omitted for clarity. Diagram is schematic; use the STLs for actual geometry.</text></svg>
