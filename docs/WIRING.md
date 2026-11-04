@@ -43,6 +43,6 @@ Research supports common modules accepting 3.3V logic; it does not prove the exa
 
 ## Mechanical wiring checks
 
-Tape the board back, not conductive pins, to the leg. Use insulating foam tape behind the ESP32. Keep USB-C accessible, both band paths clear and all wires outside the rotating gate. Mount the vibration module firmly on the hopper exterior with its solder joints insulated. Route slack outward and secure it to the frame; no dangling leads beneath the gate.
+Tape the breadboard back to the right outer side wall, and the ESP32 to the left outer side wall. Use insulating foam tape behind the ESP32. Keep USB-C facing toward the front. Keep USB-C accessible, the front approach clear and all wires outside the rotating gate. Mount the vibration module firmly on the hopper exterior with its solder joints insulated. Route slack outward and secure it to the frame; no dangling leads beneath the gate.
 
 If the servo causes resets or jitter, stop and inspect supply rating, cable resistance, ground connections and breadboard contacts. Extra power filtering or a separate servo power distribution arrangement may be necessary after testing; the current design has no added capacitor.

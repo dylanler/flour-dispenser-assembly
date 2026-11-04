@@ -9,7 +9,7 @@ Use your ordered items. Links below are the known listing or clearly labeled Ama
 | WWZMDiB SG90 servo pack | One servo, its double-arm horn and supplied center screw | [Amazon search](https://www.amazon.com/s?k=WWZMDiB+SG90+Micro+Servo+Motor+3+Pcs) |
 | BOJACK 830/400-point breadboard + jumper kit | One 400-point board; the ESP32 mounts separately | [Amazon search](https://www.amazon.com/s?k=BOJACK+3+Values+130+Pcs+Solderless+Breadboard) |
 
-Home supplies to check: USB-C **data** cable for the MacBook/ESP32, regulated 5V USB-A brick, a **spare USB-A cable to cut**, suitable existing splice connectors or solder and insulation, solid breadboard jumpers, multimeter, PLA, small zip ties, two narrow retaining bands, insulating foam tape, thin firm mounting tape, thin card shims, screwdriver, cutters and a cup. No terminal adapter, MB102 module, SN74AHCT125N, 10k resistor, or 0.1µF capacitor is part of this version.
+Home supplies to check: USB-C **data** cable for the MacBook/ESP32, regulated 5V USB-A brick, a **spare USB-A cable to cut**, suitable existing splice connectors or solder and insulation, solid breadboard jumpers, multimeter, PLA, small zip ties, insulating foam tape, thin firm mounting tape, thin card shims, screwdriver, cutters and a cup. No terminal adapter, MB102 module, SN74AHCT125N, 10k resistor, or 0.1µF capacitor is part of this version.
 
 Your USB-A power brick supplies the servo and motor through the cut USB-A cable. Check the brick's label for regulated **5V** output; **2A** gives useful headroom for servo current peaks. A 2A supply does not force 2A through the motor. Exact SG90 clone stall current remains unmeasured.
 
@@ -23,6 +23,10 @@ A multimeter is useful for identifying rail continuity, checking 5V output and s
 
 ## Printed dimensions and placement
 
-Cradle footprint 134 × 114 mm; total assembled height about 149 mm. Hopper flange 124 × 104 mm fits a 125 × 105 mm pocket. Nominal gate gap is 0.6 mm. Parts fit in the supplied 250 × 250 mm layout inside the A1 bed.
+V3 stand footprint 224 × 140 mm; stand height 190 mm; assembled dispenser height about 247 mm. Hopper flange 124 × 104 mm fits a 125 × 105 mm pocket. Nominal gate gap is 0.6 mm. Parts fit in the supplied one-plate layout inside the A1 256 × 256 mm bed. Keep the nested layout.
 
-The 400-point breadboard is illustrated at about 82 × 55 mm on the **front outer leg**, long edge horizontal, centered about 40 mm above the bench. The ESP32 sits on the **rear outer leg** with insulating foam tape and USB-C sideways. Keep both bands outside the gate sweep, near CAD X −25 and +85 mm, at most 6 mm wide. Check actual component dimensions and tape adhesion before committing. The USB-A brick and insulated cable joints stay supported on the bench with strain relief.
+The 400-point breadboard is illustrated at about 82 × 55 mm on the **right outer side wall**, long edge front to back, centered about 50 mm above the bench. The ESP32 sits on the **left outer side wall** with insulating foam tape and USB-C facing toward the front. Two printed locking clips capture the hopper at the front-left and rear-right notches. Print two copies of `05_locking_clip.stl` if printing individual parts; the V3 3MF already includes both. No bands or purchased clip hardware are required.
+
+Your scale is modeled at 105 × 125 × 17 mm and 500 g maximum. The clear bay is 200 mm wide. The illustrated cup is diameter 60 mm × height 80 mm, an assumption until the real container is specified. The robot collects that cup from the open front; exact arm/gripper compatibility still needs testing. See [Robot clearance](ROBOT_CLEARANCE.md).
+
+The clips use about a 0.6 mm nominal hook engagement in an underside recess. Print on the supplied broad side; do not rotate them upright. Inspect the hook, clear rough edges, and test the snap/release without forcing it. Clip strength and fatigue remain untested. The USB-A brick and insulated cable joints stay beside the stand with strain relief.

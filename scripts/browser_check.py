@@ -50,7 +50,7 @@ async def run(args):
                         print('Recording %.1f / %.1f seconds' % (current, duration), flush=True)
                         if current >= duration: break
                     download = await event.value
-                await download.save_as(str(ROOT / 'public/flour-v2-assembly.webm'))
+                await download.save_as(str(ROOT / 'public/flour-v3-assembly.webm'))
             assert not errors, errors
             print('Browser checks passed.')
         finally: await browser.close()

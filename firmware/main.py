@@ -13,7 +13,7 @@ watchdog = WDT(timeout=8000)
 
 PAGE = """<!doctype html><html><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flour prototype</title>
 <style>body{font:16px system-ui;max-width:620px;margin:30px auto;padding:20px;background:#f5f3ed;color:#263d32}button,input{font:inherit;margin:5px;padding:12px}button{cursor:pointer}#stop{background:#b8422b;color:white}label{display:block;margin:12px 0}pre{white-space:pre-wrap}</style>
-<h1>Flour / V2</h1><p>Physically untested prototype. Keep fingers and cables clear. Stop is software control, not a power disconnect.</p>
+<h1>Flour / V3</h1><p>Physically untested prototype. Keep fingers and cables clear. Stop is software control, not a power disconnect.</p>
 <button onclick="send('/api/arm')">Arm for 60 seconds</button><button id="stop" onclick="send('/api/stop')">STOP + CLOSE</button>
 <label>Dose milliseconds <input id="ms" type="number" value="500" min="100" max="5000"></label>
 <label>Vibration % <input id="duty" type="number" value="0" min="0" max="100"></label>

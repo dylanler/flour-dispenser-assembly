@@ -21,12 +21,15 @@ export async function makeScene(host) {
   function line(points, color, radius = .65, parent = scene) { const c = new T.CatmullRomCurve3(points.map(p => new T.Vector3(...p))); return mesh(new T.TubeGeometry(c, 64, radius, 6, false), color, parent); }
   const floor = box(1500, 2, 1500, '#e5e8dc', [0, -2, 0]); floor.receiveShadow = true;
   const grid = new T.GridHelper(600, 24, '#d1d8c9', '#dce1d5'); grid.position.y = -.95; scene.add(grid);
-  const loader = new STLLoader(); const filenames = ['01_drop_in_cradle','02_hopper_with_servo_mount','03_rotary_gate','04_lid'];
+  const H = 190;
+  const loader = new STLLoader(); const filenames = ['01_wide_cradle','02_hopper_with_servo_mount','03_rotary_gate','04_lid','05_locking_clip'];
   const geometries = await Promise.all(filenames.map(async name => { const g = await loader.loadAsync(`${import.meta.env.BASE_URL}hardware/stl/${name}.stl`); g.rotateX(-Math.PI / 2); g.computeVertexNormals(); return g; }));
   const cradle = mesh(geometries[0], colors.cradle);
   const head = new T.Group(); scene.add(head); const hopper = mesh(geometries[1], colors.hopper, head);
   const gateRoot = new T.Group(); head.add(gateRoot); const gate = mesh(geometries[2], colors.gate, gateRoot);
   const lid = mesh(geometries[3], colors.lid);
+  const clipFront = mesh(geometries[4], '#b48b50');
+  const clipRear = mesh(geometries[4], '#b48b50');
   const plate = box(256, 1, 256, '#d6dccd', [0, -.5, 0]);
   const servo = new T.Group(); head.add(servo);
   box(12.7, 22.5, 23.9, colors.servo, [35, 17.8, -5.6], servo);
@@ -57,59 +60,59 @@ export async function makeScene(host) {
   line([[0,0,0],[5,0,0],[10,3,0],[18,5,0]],colors.red,.7,power);
   line([[0,0,0],[5,0,0],[10,-3,0],[18,-5,0]],colors.black,.7,power);
   box(8,2.4,2.4,'#a8493f',[13,5,0],power);box(8,2.4,2.4,'#35453d',[13,-5,0],power);
-  const brick = new T.Group();scene.add(brick);box(45,28,36,'#f1eee1',[74,15,80],brick);box(.8,8,15,'#3b4940',[96.6,8,80],brick);
-  const bands = new T.Group(); scene.add(bands);
-  for(const x of [-25,85]) {
-    const pts=[[x,1,59],[x,94,59],[x,94,-59],[x,1,-59],[x,1,59]];
-    line(pts,'#b58d53',1.3,bands); for(const z of [-49,49])box(8,2,10,'#dfcfae',[x,92.5,z],bands);
-  }
-  const cup = new T.Group(); scene.add(cup); cylinder(21,30,'#c2cbb7',[0,16,0],cup); cylinder(19,1,'#687d67',[0,31,0],cup);
+  const brick = new T.Group();scene.add(brick);box(45,28,36,'#f1eee1',[145,15,70],brick);box(.8,8,15,'#3b4940',[167.6,8,70],brick);
+  const scale = new T.Group();scene.add(scale);box(105,17,125,'#343f3a',[0,8.5,0],scale);box(101,1,96,'#b6bfbb',[0,17,-12],scale);box(46,.7,14,'#457ca9',[0,17.4,48],scale);
+  for(const x of [-40,40])cylinder(5,.8,'#a8b4ac',[x,17.4,48],scale);
+  const cup = new T.Group(); scene.add(cup); cylinder(30,80,'#c2cbb7',[0,58,0],cup); cylinder(28,1,'#687d67',[0,98,0],cup);
   const wires = new T.Group(); scene.add(wires);
   const wireSets=[];
   function wire(stage,points,color){const m=line(points,color,.65,wires);wireSets.push({m,stage});}
-  wire(5,[[110,8,80],[90,5,94],[67,40,72],[56,61,64]],colors.red);
-  wire(5,[[110,8,74],[90,5,87],[63,30,72],[56,58,64]],colors.black);
-  wire(5,[[15,45,-65],[-44,23,-65],[-48,24,70],[0,20,64]],colors.black);
-  wire(6,[[0,97,26],[-37,110,45],[-42,65,77],[38,61,64]],colors.red);
-  wire(6,[[3,97,26],[-32,108,45],[-37,57,73],[38,58,64]],colors.black);
-  wire(6,[[-3,97,26],[-48,120,41],[-51,55,-78],[30,45,-65]],colors.pwm);
-  wire(7,[[35,106,17],[63,119,18],[95,100,70],[92,62,75],[25,61,64]],colors.red);
-  wire(7,[[37,106,17],[66,117,19],[99,97,70],[96,59,75],[25,58,64]],colors.black);
-  wire(7,[[39,106,17],[70,115,20],[105,100,67],[108,48,-75],[35,45,-65]],colors.signal);
-  wire(8,[[54,40,-64],[110,38,-90],[125,5,-130],[190,3,-160]],'#717a71');
+  wire(5,[[199,13,70],[170,8,86],[145,40,75],[123,73,30]],colors.red);
+  wire(5,[[199,3,70],[170,4,80],[140,30,70],[123,70,30]],colors.black);
+  wire(5,[[-122,48,-15],[-140,15,-90],[145,12,-90],[123,70,0]],colors.black);
+  wire(6,[[0,195,26],[50,223,40],[125,200,55],[138,130,50],[123,73,-10]],colors.red);
+  wire(6,[[3,195,26],[55,219,44],[129,197,59],[142,125,55],[123,70,-10]],colors.black);
+  wire(6,[[-3,195,26],[-40,220,45],[-140,220,85],[-138,100,65],[-122,55,5]],colors.pwm);
+  wire(7,[[35,204,17],[80,230,25],[140,200,60],[142,110,50],[123,73,10]],colors.red);
+  wire(7,[[37,204,17],[85,227,28],[144,196,65],[145,105,55],[123,70,10]],colors.black);
+  wire(7,[[39,204,17],[50,235,-5],[-145,230,-75],[-140,100,-65],[-122,55,-10]],colors.signal);
+  wire(8,[[-117,50,31],[-146,45,80],[-175,4,100],[-230,3,130]],'#717a71');
   const labels = document.querySelector('#callouts');
-  const labelData=[['SG90 · shaft down',[35,126,0],2,3],['VCC · GND · IN',[0,113,37],3,3],['400-point breadboard',[27,32,70],4,8],['ESP32 · USB-C',[27,70,-65],4,8],['USB-A brick · cut cable · insulated joints',[100,35,85],5,7],['GPIO19 → IN',[0,120,40],6,6],['GPIO18 → servo',[70,124,10],7,7],['Horn + two ties',[35,70,0],10,11],['Both bands required',[85,95,55],13,14]];
+  const labelData=[['SG90 · shaft down',[35,224,0],2,3],['VCC · GND · IN',[0,211,37],3,3],['400-point breadboard',[124,83,0],4,8],['ESP32 · USB-C',[-123,76,0],4,8],['USB-A brick · cut lead',[170,38,75],5,7],['GPIO19 → IN',[-80,230,70],6,6],['GPIO18 → servo',[80,240,10],7,7],['Supplied servo horn · not printed',[35,173,0],10,11],['Front locking clip',[-25,194,52],13,14],['Rear locking clip',[85,194,-52],13,14],['105 × 125 × 17 mm · 500 g scale',[0,22,55],12,16]];
   const labelEls=labelData.map(([text])=>{const e=document.createElement('div');e.className='callout';e.textContent=text;labels.append(e);return e;});
   function resize(){ const {width,height}=host.getBoundingClientRect(); renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix(); }
   new ResizeObserver(resize).observe(host); resize();
   let stage=-1, manual=false;orbit.addEventListener('start',()=>manual=true);
   const smooth=t=>t*t*(3-2*t);
-  function setCamera(i){manual=false;const rear = i===4 || i===8 || i===14;
-    // Look through the cradle's open end for the horn and moving gate.
-    camera.position.set(...(i===0?[330,410,390]:i===10?[200,195,150]:i===11?[240,80,35]:i===16?[310,55,60]:rear?[250,175,-320]:[255,210,310]));orbit.target.set(...(i===0?[0,12,0]:i===10?[35,70,0]:i===11?[35,105,0]:i===16?[25,75,0]:[20,68,0]));orbit.update();}
+  function setCamera(i){manual=false;
+    const pos=i===0?[380,480,450]:i===2||i===3?[220,320,270]:i===4?[400,160,230]:i===8?[-360,180,270]:i===10?[200,290,170]:i===11?[250,180,65]:i===13?[300,290,340]:i===16?[300,170,420]:[365,285,430];
+    const target=i===0?[0,55,0]:i===2||i===3?[15,210,0]:i===4?[20,75,0]:i===8?[-80,110,0]:i===10?[35,168,0]:i===11?[35,204,0]:i===13?[25,180,0]:i===16?[0,120,40]:[0,115,0];
+    camera.position.set(...pos);orbit.target.set(...target);orbit.update();}
   function update(i,p,time){
     if(i!==stage){stage=i;setCamera(i);} const e=smooth(Math.min(1,p*2));
-    plate.visible=i===0; cradle.visible=i!==10&&i!==11;cradle.material.transparent=i===16;cradle.material.opacity=i===16?.2:1;cradle.material.depthWrite=i!==16;cradle.rotation.set(0,0,0);cradle.position.set(0,92,0);cradle.rotation.x=Math.PI;
-    head.position.set(0,88.3,0);head.rotation.set(0,0,0);gateRoot.position.set(35,-6.1,0);gateRoot.rotation.set(0,Math.PI/3,0);lid.rotation.set(Math.PI,0,0);lid.position.set(0,148.7,0);
-    if(i===0){cradle.rotation.x=0;cradle.position.set(-74,0,59);head.position.set(-63,0,-62);gateRoot.position.set(138,-.01,125);gateRoot.rotation.y=0;lid.rotation.x=0;lid.position.set(76,0,-30);}
-    if(i===1){cradle.rotation.x=Math.PI*e;cradle.position.y=92*e;head.position.set(0,180,-155);lid.position.set(100,2,-140);}
-    if(i>1&&i<12)head.position.y=112;
-    if(i===12)head.position.y=112-23.7*e;
+    plate.visible=i===0; cradle.visible=i!==10&&i!==11;cradle.material.transparent=i===16;cradle.material.opacity=i===16?.2:1;cradle.material.depthWrite=i!==16;cradle.rotation.set(0,0,0);cradle.position.set(0,H,0);cradle.rotation.x=Math.PI;
+    head.position.set(0,H-3.7,0);head.rotation.set(0,0,0);gateRoot.position.set(35,-6.1,0);gateRoot.rotation.set(0,Math.PI/3,0);lid.rotation.set(Math.PI,0,0);lid.position.set(0,H+56.7,0);
+    clipFront.rotation.set(0,0,Math.PI/2);clipFront.position.set(-21,H-13.6,58.6+(i===13?25*(1-e):0));
+    clipRear.rotation.set(0,Math.PI,Math.PI/2);clipRear.position.set(81,H-13.6,-58.6-(i===13?25*(1-e):0));
+    clipFront.visible=clipRear.visible=i===0||i>=13;
+    if(i===0){cradle.rotation.x=0;cradle.position.set(-12,0,54);head.position.set(-87,0,-72);gateRoot.position.set(110,-.01,126);gateRoot.rotation.y=0;lid.rotation.x=0;lid.position.set(83,0,-72);clipFront.rotation.set(0,0,0);clipFront.position.set(-103,0,93);clipRear.rotation.set(0,0,0);clipRear.position.set(-80,0,93);}
+    if(i===1){cradle.rotation.x=Math.PI*e;cradle.position.y=H*e;head.position.set(0,260,-155);lid.position.set(100,2,-140);}
+    if(i>1&&i<12)head.position.y=H+20;
+    if(i===12)head.position.y=H+20-23.7*e;
     hopper.visible=i!==10;servo.visible=i>=2&&i!==10;servoTies.visible=i>=2;servo.position.set(0,i===2?45*(1-e):0,0);
     motor.visible=i>=3&&i!==10;motor.position.set(0,20,21+(i===3?45*(1-e):0));motor.rotation.x=.396;
-    electronics.visible=i>=4&&i!==10&&i!==11;breadboard.position.set(27,40,59+(i===4?55*(1-e):0));esp.position.set(27,40,-61-(i===4?55*(1-e):0));
-    power.visible=i>=5;brick.visible=i>=5;power.position.set(110,8,80);power.rotation.x=0;
+    electronics.visible=i>=4&&i!==10&&i!==11;breadboard.position.set(116+(i===4?55*(1-e):0),50,0);breadboard.rotation.y=Math.PI/2;esp.position.set(-116-(i===4?55*(1-e):0),50,0);esp.rotation.y=Math.PI/2;
+    power.visible=i>=5;brick.visible=i>=5;power.position.set(181,8,70);power.rotation.x=0;
     wires.visible=i>=5&&i!==10&&i!==11;wireSets.forEach(({m,stage:s})=>{m.visible=i>=s;const count=m.geometry.index.count;m.geometry.setDrawRange(0,i===s?Math.floor(count*e/3)*3:count);});
     gate.visible=i===0||i>=10;horn.visible=i>=10;hornTies.visible=i>=10;screw.visible=i>=11;
     if(i===10){gateRoot.position.set(35,-42,55*(1-e));horn.position.y=16*(1-e);}
     else horn.position.y=0;
     if(i===11){gateRoot.position.y=-42+35.9*e;screw.position.y=-20*(1-e);}else screw.position.y=0;
-    bands.visible=i>=13;bands.scale.y=i===13?.5+.5*e:1;
     lid.visible=i===0||i===1||i>=15;if(i===15)lid.position.y+=50*(1-e);
-    cup.visible=i>=12;
-    if(i===16){const phase=p<.25?0:p<.35?smooth((p-.25)/.1):p<.65?1:p<.75?1-smooth((p-.65)/.1):0;gateRoot.rotation.y=Math.PI/3*(1-phase);if(phase>.95)head.position.x=Math.sin(time*85)*.12;}
+    scale.visible=i>=1&&i!==10&&i!==11;cup.visible=i>=12;cup.position.set(0,0,0);
+    if(i===16){const phase=p<.2?0:p<.3?smooth((p-.2)/.1):p<.5?1:p<.6?1-smooth((p-.5)/.1):0;gateRoot.rotation.y=Math.PI/3*(1-phase);if(phase>.95)head.position.x=Math.sin(time*85)*.12;if(p>.8){const pickup=smooth((p-.8)/.2);cup.position.set(0,15*Math.min(1,pickup*5),145*pickup);}}
     labelData.forEach(([,pt,start,end],n)=>{const el=labelEls[n];el.hidden=i<start||i>end; if(!el.hidden){const v=new T.Vector3(...pt).project(camera);el.style.left=`${(v.x*.5+.5)*host.clientWidth}px`;el.style.top=`${(-v.y*.5+.5)*host.clientHeight}px`;}});
-    if(!manual&&i===0)camera.position.x=330+Math.sin(time*.08)*12;
+    if(!manual&&i===0)camera.position.x=380+Math.sin(time*.08)*12;
     orbit.update();renderer.render(scene,camera);
   }
   return {renderer, update, reset:()=>setCamera(stage), scene, camera};

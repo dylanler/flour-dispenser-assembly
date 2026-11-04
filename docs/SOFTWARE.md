@@ -46,7 +46,7 @@ For later code-only updates without erasing MicroPython:
 
 Reconnect regulated external 5V and common ground with the **horn removed**. Connect to Wi-Fi **FlourProto**, password **FlourTest26**, and open **http://192.168.4.1**. The phone/computer may warn this network has no internet; stay connected.
 
-Choose **Center with horn removed**. It outputs 1500 µs. Disconnect external power, then install the horn/gate in the closed position and insert the supplied screw. Adjust the servo ear packing for free gate clearance. Fit both retaining bands and secure the cables before movement tests.
+Choose **Center with horn removed**. It outputs 1500 µs. Disconnect external power, then install the horn/gate in the closed position and insert the supplied screw. Adjust the servo ear packing for free gate clearance. Fit both printed locking clips and secure the cables before movement tests.
 
 On the setup page, adjust open/closed pulse widths in small increments with an **empty hopper**. The initial closed/open values are 1500/1000 µs. They are starting values, not a guarantee of exact angles or outlet alignment. The animation shows an illustrative 60° travel; real servo pulse-to-angle response varies. Avoid driving a hard stop. `Test open pulse` deliberately moves and holds the gate for calibration, with the motor off; press Stop when done. Keep hands clear.
 

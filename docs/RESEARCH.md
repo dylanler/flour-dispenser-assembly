@@ -20,4 +20,4 @@ The review about starting at 3.7V is relevant if powering the motor from 3.3V. T
 
 3.3V control is plausible and common for similar boards; exact compatibility remains unverified. No buffer chip is included. Check the actual board's input circuit/specification before attaching GPIO19. If verification is unavailable or IN has an unexplained near-5V voltage, leave it disconnected and motor control disabled. The firmware supports gate-only testing at duty 0.
 
-Electrical compatibility also does not prove the motor can mobilize flour. RPM alone does not specify vibration force. Hopper loading, coupling stiffness, flour moisture and bridging determine useful output. Test a small amount first. The motor, servo, band retention and flour flow have not been physically tested with this printed prototype.
+Electrical compatibility also does not prove the motor can mobilize flour. RPM alone does not specify vibration force. Hopper loading, coupling stiffness, flour moisture and bridging determine useful output. Test a small amount first. The motor, servo, clip retention and flour flow have not been physically tested with this printed prototype.

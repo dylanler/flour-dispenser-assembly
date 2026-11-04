@@ -1,5 +1,15 @@
 # Validation scope
 
+## V3 geometry and scale bay
+
+The V3 generator verifies six separate watertight connected pieces (five unique models), all inside the 256 mm A1 bed, including nested parts. It tests nominal assembled meshes for interference through a −70° to +70° gate sweep with both clips installed. It also checks that a 1 mm rigid withdrawal hits each clip hook's recess wall and a 1 mm hopper lift hits each upper jaw. These establish geometric capture, **not** spring behavior or retention force.
+
+The known 105 × 125 × 17 mm scale envelope clears the stand. A solid Ø60 × 80 mm example cup, raised 15 mm above the scale and moved through the front opening, clears the printed mechanism in the checked path. The actual cup/gripper/robot are unspecified and are not validated by that example.
+
+Actual Bambu Studio V3 slicing reports six objects inside the plate, no supports, **463.94 g / 53,611 seconds** (14 h 53 min 31 s). The new stand footprint is 224 × 140 mm and its height is 190 mm; inner width is 200 mm. V3 reports are `validation_v3.json` and `slicer_validation_v3.json`. The standalone CAD generator is also run in CI.
+
+No physical tests have established the clips' insertion force, release force, fatigue life, layer strength, or retention during vibration. The nominal hook engagement is 0.6 mm, with a 0.8 mm-high hook. Tight fits require adjustment rather than force. Keep the scale independent of the stand and stop vibration before reading it. An optional 11.3 mm stack coupon with the matching recess is provided for a small physical clip-fit test; it is excluded from the six-piece full plate.
+
 ## Software checks completed
 
 - Production Vite build succeeded with Node 22.23.4; npm audit reported zero known vulnerabilities at installation time.
@@ -18,6 +28,6 @@ Those results do not include SG90 clone dimensions, mounting tape, wires or rete
 
 ## Still requires the actual parts
 
-This repository has not been flashed to the purchased ESP32. GPIO voltage compatibility of the exact vibration module, servo pulse mapping, horn/shim fit, USB/CH340 behavior, supply performance, adhesion, retaining bands, flour flow and sealing have not been physically tested. MicroPython code was syntax checked and exercised through hardware mocks, not executed on this ESP32.
+This repository has not been flashed to the purchased ESP32. GPIO voltage compatibility of the exact vibration module, servo pulse mapping, horn/shim fit, USB/CH340 behavior, supply performance, adhesion, locking clips, flour flow and sealing have not been physically tested. MicroPython code was syntax checked and exercised through hardware mocks, not executed on this ESP32.
 
 Do not interpret a passing simulation, browser test or firmware test as a measured dispensing result. Follow the arrival checks and small supervised flour trial in the guide.

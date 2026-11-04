@@ -1,0 +1,53 @@
+{
+  "status": "Digital checks passed; no physical tests",
+  "version": 3,
+  "printed_pieces": 6,
+  "distinct_printed_models": 5,
+  "stand_outer_mm": [
+    224,
+    140,
+    190
+  ],
+  "clear_bay_width_mm": 200,
+  "scale_mm": [
+    105,
+    125,
+    17
+  ],
+  "gate_bottom_height_mm": 180.2,
+  "conservative_clearance_below_fastener_mm": 175,
+  "example_cup_mm": [
+    60,
+    60,
+    80
+  ],
+  "cup_size_assumed": true,
+  "plate_bounds_mm": [
+    [
+      4.0,
+      4.0,
+      0.0
+    ],
+    [
+      246.0,
+      252.0,
+      190.0
+    ]
+  ],
+  "clip_hook_engagement_mm": 0.6,
+  "clip_hook_height_mm": 0.8,
+  "clip_gap_mm": 11.7,
+  "clamped_stack_mm": 11.3,
+  "gate_gap_mm": 0.6,
+  "sweep_degrees": [
+    -70,
+    70
+  ],
+  "retention": "Two printed C-clips with hooks engaging underside recesses; no retaining bands",
+  "limitations": [
+    "Clip insertion flex, retention force and durability not physically tested",
+    "Robot model/pose and real cup unspecified; no robot collision or reach validation",
+    "Scale must rest on table and not touch stand; stop vibration before weighing",
+    "Hardware fit, flour flow and shutoff remain untested"
+  ]
+}
