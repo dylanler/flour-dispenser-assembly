@@ -2,7 +2,7 @@
 
 **Do not print the original full V3 plate again to fix this.** A user has physically reported that the SG90 gearbox tail does not clear the circular hole. The old hardware illustration omitted that tail. Prior mesh and slicer checks did not validate servo fit, and the earlier recommendation to commit to the full print was too confident.
 
-Keep the stand, hopper, gate, lid and clips. This audit offers a small diagnostic kit and a conditional hand-fit repair, not a claim that a corrected full assembly has been tested.
+Keep the stand, gate, lid and clips. The current repair replaces only the hopper, as requested by the user without a separate test print. Older diagnostic and hand-fit options below are optional historical alternatives. No physical fit is claimed.
 
 ## Sources and variant limits
 
@@ -56,3 +56,17 @@ If either bridge pair cannot satisfy both ear support and horn/gate seating, sto
 ## What remains unverified
 
 No physical check has yet been made with the user's servo. The purchased unit's exact boss, mounting geometry, shaft/horn engagement, spacer stability under vibration, and gate movement remain unverified. The small kit is explicitly a physical-fit test. It does not retroactively validate the original V3 files or establish that the whole dispenser works.
+
+
+## Current V3.1 replacement: user declined a separate test print
+
+The user explicitly requested a wider hole with relief margin rather than another test print. `scripts/build_replacement_hopper.py` produces `07_HOPPER_SG90_RELIEF_V3_1.stl` and the single-object `PRINT_THIS_HOPPER_ONLY_V3_1.3mf`. The original hopper and full plate are preserved as legacy geometry; do not print them to obtain the correction.
+
+- Main opening Ø15 mm versus the reference boss Ø11.8 mm: 1.6 mm nominal radial relief.
+- Tail opening 8 mm wide, reaching 11 mm from the unchanged shaft centre versus the reference 5 mm width and 8.8 mm reach: 2.2 mm extra end clearance.
+- Both ear supports now end at z8 rather than z7, 5 mm above the flange, and extend beneath the reference ears. No separate bridge spacers are included or required by this revision.
+- Original outlet, cone, flange outline, clip interfaces, tie slots and shaft centre remain unchanged. Keep all other printed parts.
+
+Digital checks include a watertight single component, changes confined to the servo interface, nominal complete reference servo clearance, +1.5% boss XY clearance, gate sweep and stand clearance. These do not validate the purchased unit or its horn socket depth. The detailed supplied drawing is the dimensional reference; Tower Pro sources above do not establish the exact WWZMDiB variant. Assemble unpowered after printing and check the case, boss, horn seating and freely moving gate before operating.
+
+Bambu Studio Generic PETG reference slice: 61.33 g, 8639 seconds (about 2 h 24 min), A1 0.4 mm, 0.20 mm layers, 3 walls, 5 top/bottom layers, 20% gyroid, no supports or brim, textured PEI. Use the matching preset for the actual PETG spool. The 3MF is geometry/layout only.

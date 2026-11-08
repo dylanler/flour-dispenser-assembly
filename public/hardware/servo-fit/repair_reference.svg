@@ -1,30 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="580" viewBox="0 0 1050 580">
-<style>text{font:17px Arial,sans-serif;fill:#293f34}.title{font-size:27px;font-weight:bold}.small{font-size:14px}</style>
-<rect width="1050" height="580" fill="#f5f3ed"/>
-<text x="35" y="42" class="title">SG90 repair candidate · keep the existing hopper</text>
-<rect x="168" y="124" width="144" height="72" fill="#d8c5a1" stroke="#7d6844"/>
-<rect x="168" y="420" width="144" height="72" fill="#d8c5a1" stroke="#7d6844"/>
-<rect x="168" y="124" width="144" height="85.6" fill="none" stroke="#4d8297" stroke-width="3"/>
-<rect x="168" y="398.4" width="144" height="93.6" fill="none" stroke="#4d8297" stroke-width="3"/>
-<circle cx="240" cy="312" r="25.6" fill="#a8cdb5"/><rect x="214.4" y="260" width="51.2" height="52" fill="#a8cdb5"/>
-<circle cx="240" cy="260" r="56" fill="#f5f3ed" stroke="#bc684e" stroke-width="3" stroke-dasharray="6 4"/>
-<circle cx="240" cy="260" r="47.2" fill="none" stroke="#456b8a" stroke-width="2"/>
-<circle cx="240" cy="310.4" r="20" fill="none" stroke="#456b8a" stroke-width="2"/>
-<path d="M240 180v182M158 260h164" stroke="#839581" stroke-dasharray="3 4"/>
-<text x="33" y="111" class="small">Near pad</text><path d="M112 108L168 150" stroke="#61745f"/>
-<text x="35" y="522" class="small">Far pad / long case side</text><path d="M203 509L220 477" stroke="#61745f"/>
-<text x="365" y="220" class="small">Original hole: Ø14 mm</text><path d="M355 218L294 235" stroke="#bc684e"/>
-<text x="365" y="310" class="small">Relief: 6.4 mm wide</text><path d="M353 307L264 321" stroke="#55846b"/>
-<text x="365" y="338" class="small">Tip: 9.7 mm from centre</text>
-<text x="540" y="110" font-weight="bold">Test the tiny gauge before filing.</text>
-<text x="540" y="151">Red dashed circle: existing opening</text>
-<text x="540" y="183">Green: candidate tail relief only</text>
-<text x="540" y="215">Blue outlines: candidate ear bridges</text>
-<text x="540" y="267">The tail points toward the farther pad.</text>
-<text x="540" y="299">Keep the original hole centre.</text>
-<text x="540" y="331">Do not enlarge the entire circle.</text>
-<text x="540" y="385">Spacers: 1.0 mm or 1.4 mm pairs.</text>
-<text x="540" y="417">Use one pair, not both stacked.</text>
-<text x="540" y="449">Case, boss, horn and gate must all clear.</text>
-<text x="35" y="558" class="small">Reference drawing only; purchased servo not verified. Illustration is not a 1:1 cutting template. Actual dry fit is required.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440">
+<style>text{font:18px Arial,sans-serif;fill:#293f34}.title{font-size:26px;font-weight:bold}</style><rect width="900" height="440" fill="#f5f3ed"/>
+<text x="30" y="42" class="title">V3.1 · enlarged opening and integrated ear supports</text>
+<rect x="120" y="85" width="180" height="55" fill="#d8c5a1"/><rect x="120" y="335" width="180" height="65" fill="#d8c5a1"/>
+<path d="M135 220a75 75 0 1 1 115 63v7a40 40 0 0 1-80 0v-7a75 75 0 0 1-35-63" fill="#a8cdb5" stroke="#456b8a" stroke-width="3"/>
+<path d="M210 125v220M110 220h200" stroke="#839581" stroke-dasharray="4 4"/>
+<text x="370" y="125">Main opening: Ø15 mm</text><text x="370" y="165">Tail width: 8 mm</text><text x="370" y="205">Centre to tail tip: 11 mm</text><text x="370" y="245">Extra tail reach over drawing: 2.2 mm</text><text x="370" y="300">Both ear supports raised 1 mm</text><text x="370" y="340">No separate printed spacers</text><text x="30" y="428">Reference diagram only; not a cutting template or physical fit validation.</text></svg>

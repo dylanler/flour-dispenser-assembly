@@ -1,0 +1,40 @@
+{
+  "version": "V3.1 hopper only",
+  "user_choice": "User explicitly declined a separate test print and requested a wider hole with relief margin.",
+  "reference": "Detailed SG90 drawing supplied by user; exact purchased servo is not verified.",
+  "opening_mm": {
+    "main_diameter": 15,
+    "tail_width": 8,
+    "shaft_center_to_tail_tip": 11,
+    "nominal_drawing_tail_tip": 8.8,
+    "extra_tip_clearance": 2.2
+  },
+  "ear_supports": {
+    "top_z": 8,
+    "height_above_flange_top": 5,
+    "increase_over_original": 1,
+    "near_y": [
+      -17,
+      -6.3
+    ],
+    "far_y": [
+      17.3,
+      29
+    ]
+  },
+  "unchanged": [
+    "124 x 104 x 3 mm flange",
+    "Powder outlet and cone",
+    "Servo shaft centre at x35,y0",
+    "Zip-tie slots",
+    "Stand/clip interfaces",
+    "Gate, lid, clips and stand do not need reprinting for this change."
+  ],
+  "checks": "Watertight connected mesh; changes confined to servo interface; nominal complete reference servo and +1.5% XY boss profile clear; gate sweep and stand clearance checked.",
+  "physical_fit_verified": false,
+  "unverified": [
+    "Exact purchased servo dimensions and vertical tolerance stack",
+    "Supplied horn socket depth and full seating",
+    "Physical PETG fit and flow performance"
+  ]
+}

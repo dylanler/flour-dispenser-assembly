@@ -1,10 +1,10 @@
 # Flour / V3 — wide scale bay, printed locking clips
 
-> **Known SG90 fit issue reported 2026-11-07. Do not reprint the original full plate.** The round servo opening omits the gearbox tail, and the mounting height also needs checking. Keep existing parts. Start with the [salvage / small fit-test guide](public/hardware/servo-fit/REPAIR_GUIDE.html) and [dimensional audit](docs/SERVO_FIT_AUDIT.md). The [tiny diagnostic kit](public/hardware/servo-fit/SG90_SMALL_FIT_TEST_KIT.3mf) is about 3.45 g / 16 minutes in the Generic PETG reference slice. It is not a physically verified repair.
+> **V3.1 hopper-only repair (2026-11-07):** [Print this replacement hopper](public/hardware/servo-fit/PRINT_THIS_HOPPER_ONLY_V3_1.3mf). The servo opening is now �15 mm with an 8 mm-wide tail relief reaching 11 mm from the shaft centre; the ear supports are raised 1 mm and extended. Keep the stand, gate, lid and clips. [Assembly instructions](public/hardware/servo-fit/REPAIR_GUIDE.html). Reference PETG slice: 61.33 g / about 2 h 24 min. Based on the supplied drawing; physical fit of the purchased servo remains unverified. The user chose this replacement without a separate test print. Do not reprint the original full plate.
 
 A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.
 
-**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Small servo fit-test kit](public/hardware/servo-fit/SG90_SMALL_FIT_TEST_KIT.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
+**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Replacement hopper only](public/hardware/servo-fit/PRINT_THIS_HOPPER_ONLY_V3_1.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
 ![V3 assembly](public/hardware/assembly_preview_v3.png)
 
@@ -52,7 +52,7 @@ npm ci
 npm run dev
 ```
 
-The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the repair guide and small diagnostic kit. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
+The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the hopper-only repair guide. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
 
 ```sh
 npm test
@@ -60,7 +60,7 @@ python -m unittest discover -s tests -p "test_*.py"
 npm run build
 ```
 
-[Validation details](docs/VALIDATION.md) distinguish software, mesh and slicer checks from physical performance. `public/hardware/source/regenerate_v3.py` regenerates V3 CAD; its dependencies are listed beside it. V2 files remain explicitly named as V2 for users of the previous print. Use the **V3 plate** for this build; do not substitute the old stand or old band-based guide.
+[Validation details](docs/VALIDATION.md) distinguish software, mesh and slicer checks from physical performance. `public/hardware/source/regenerate_v3.py` regenerates V3 CAD; its dependencies are listed beside it. V2 files remain explicitly named as V2 for users of the previous print. The original V3 plate still contains the faulty hopper: use the separately named V3.1 replacement hopper for this repair.
 
 **Not physically tested:** clip flex/insertion/retention, servo fit, supply performance, flour bridging, flow and leakage, or robot pickup. The gate has clearance, is not sealed and does not mechanically close on loss of power. Use supervised small flour trials. Printed food-contact surfaces need your own material/cleanability assessment; this is not certified food equipment or a metallic-powder design.
 
