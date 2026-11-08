@@ -1,0 +1,10 @@
+{
+  "slicer": "Bambu Studio 2.5.00.66",
+  "printer": "Bambu Lab A1 0.4",
+  "filament": "Generic PETG @BBL A1",
+  "settings": "0.2 mm, 3 walls, 5 top/bottom, 20% gyroid, no supports, no brim",
+  "objects": 5,
+  "predicted_grams": 3.45,
+  "predicted_seconds": 956,
+  "physical_fit_verified": false
+}

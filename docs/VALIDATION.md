@@ -1,5 +1,7 @@
 # Validation scope
 
+**Known physical fit failure, reported 2026-11-07:** the SG90 gearbox tail does not clear the original 14 mm round opening. The older servo model omitted this tail. Reference-drawing checks also find a mounting-height risk. Original printed-part mesh and slicer checks did not establish component fit. See [SERVO_FIT_AUDIT.md](SERVO_FIT_AUDIT.md). The small diagnostic kit is drawing-based, about 3.45 g of PETG, and is not physically verified.
+
 ## V3 geometry and scale bay
 
 The V3 generator verifies six separate watertight connected pieces (five unique models), all inside the 256 mm A1 bed, including nested parts. It tests nominal assembled meshes for interference through a −70° to +70° gate sweep with both clips installed. It also checks that a 1 mm rigid withdrawal hits each clip hook's recess wall and a 1 mm hopper lift hits each upper jaw. These establish geometric capture, **not** spring behavior or retention force.

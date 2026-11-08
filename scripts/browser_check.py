@@ -41,6 +41,8 @@ async def run(args):
             await page.set_viewport_size(dict(width=1536, height=1050))
             await page.screenshot(path=str(output / 'desktop.png'), full_page=True)
             if args.record:
+                if await page.locator('#record').is_disabled():
+                    raise RuntimeError('Video export is paused because the original servo illustration has a known fit issue. Use the repair guide.')
                 async with page.expect_download(timeout=420000) as event:
                     await page.locator('#record').click()
                     duration = await page.evaluate('assembly.totalDuration')

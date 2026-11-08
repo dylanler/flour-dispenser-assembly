@@ -1,0 +1,51 @@
+{
+  "purpose": "Small fit diagnostics for the already-printed V3 hopper; not a full replacement or confirmed physical fit",
+  "source": "User-supplied detailed SG90/Addicore drawing, labelled tolerance +/-1.5%; exact WWZMDiB unit not verified",
+  "drawing_mm": {
+    "round_boss_diameter": 11.8,
+    "shaft_center_to_tail_tip": 8.8,
+    "tail_width": 5.0,
+    "boss_projection": 4.0,
+    "shaft_projection": 3.2,
+    "case_length": 22.5,
+    "case_width": 11.8,
+    "case_height": 22.7,
+    "ear_top_from_case_bottom": 18.4,
+    "ear_bottom_from_case_bottom": 15.9
+  },
+  "gauge_mm": {
+    "main_hole_diameter": 14,
+    "relief_width": 6.4,
+    "shaft_center_to_relief_tip": 9.7,
+    "thickness": 3
+  },
+  "bridge_candidates_mm": [
+    1.0,
+    1.4
+  ],
+  "reference_only_height_checks": [
+    {
+      "bridge_height_mm": 1.0,
+      "case_to_flange_top_clearance_mm": 0.7,
+      "boss_to_printed_gate_top_clearance_mm": 0.3,
+      "shaft_tip_below_flange_bottom_mm": 3.5,
+      "horn_seating_verified": false
+    },
+    {
+      "bridge_height_mm": 1.4,
+      "case_to_flange_top_clearance_mm": 1.1,
+      "boss_to_printed_gate_top_clearance_mm": 0.7,
+      "shaft_tip_below_flange_bottom_mm": 3.1,
+      "horn_seating_verified": false
+    }
+  ],
+  "geometry_checks": "Reference boss at +1.5% clears gauge; old circular profile collides. Nominal complete case/boss/shaft/ear envelopes clear relieved hopper and printed gate with either candidate bridge pair. Horn/socket omitted because dimensions are unknown. This is not a physical fit check.",
+  "solid_volume_mm3": 3162.685858228242,
+  "physical_tested": false,
+  "unverified": [
+    "Purchased servo identity and actual dimensions",
+    "Horn socket depth and seating",
+    "Insertion force and print dimensional accuracy",
+    "Mounting ear, case, boss and gate clearance on assembled physical parts"
+  ]
+}

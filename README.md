@@ -1,8 +1,10 @@
 # Flour / V3 — wide scale bay, printed locking clips
 
+> **Known SG90 fit issue reported 2026-11-07. Do not reprint the original full plate.** The round servo opening omits the gearbox tail, and the mounting height also needs checking. Keep existing parts. Start with the [salvage / small fit-test guide](public/hardware/servo-fit/REPAIR_GUIDE.html) and [dimensional audit](docs/SERVO_FIT_AUDIT.md). The [tiny diagnostic kit](public/hardware/servo-fit/SG90_SMALL_FIT_TEST_KIT.3mf) is about 3.45 g / 16 minutes in the Generic PETG reference slice. It is not a physically verified repair.
+
 A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.
 
-**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Download video](https://dylanler.github.io/flour-dispenser-assembly/flour-v3-assembly.webm) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
+**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Small servo fit-test kit](public/hardware/servo-fit/SG90_SMALL_FIT_TEST_KIT.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
 ![V3 assembly](public/hardware/assembly_preview_v3.png)
 
@@ -18,9 +20,9 @@ A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5
 
 The scale rests on the table inside the opening and does not touch the stand. The robot collects the **cup under the dispenser**, not the hopper. Keep the front approach clear. Space is provided for fingers around the example cup; actual YAM/SO-101 reach, wrist, gripper and cup compatibility are **not validated**. See [scale and robot clearance](docs/ROBOT_CLEARANCE.md).
 
-## Print and assemble
+## Original V3 layout — full print on hold
 
-1. Open [A1_V3_WIDE_ONE_PLATE.3mf](public/hardware/A1_V3_WIDE_ONE_PLATE.3mf) in Bambu Studio. This is geometry only. Select A1 / 0.4 mm, 0.2 mm layers, 3 walls, 5 top/bottom layers, 20% gyroid, no supports. **Keep the nested layout/orientations:** the gate prints inside the stand opening and both clips inside its left roof window. All pieces remain separate.
+1. **Reference only until servo fit is resolved:** [A1_V3_WIDE_ONE_PLATE.3mf](public/hardware/A1_V3_WIDE_ONE_PLATE.3mf) in Bambu Studio. This is geometry only. Select A1 / 0.4 mm, 0.2 mm layers, 3 walls, 5 top/bottom layers, 20% gyroid, no supports. **Keep the nested layout/orientations:** the gate prints inside the stand opening and both clips inside its left roof window. All pieces remain separate.
 2. The actual slicer check estimates **463.94 g and 14 h 53 min 31 s**. This is longer/heavier than V2 because the stand is much wider and taller. Check adhesion and the full preview before printing.
 3. Turn the stand over. Attach the servo above the flange with two zip ties. Mount the vibration module on the hopper exterior. Center the servo electronically before fitting the horn.
 4. The **horn is the small plastic double-arm part supplied with the SG90**, not a printed part. Tie it into the printed gate recess, socket upward, and fit the supplied center screw. Adjust ear shims for about 0.4–0.8 mm gate clearance.
@@ -50,7 +52,7 @@ npm ci
 npm run dev
 ```
 
-Play, pause, scrub, select chapters, orbit, or export a captioned WebM. The scene loads the actual V3 STL files and includes the scale, clip installation, electronics and an illustrative cup pickup. Electronics and robot motion are not manufacturing/collision models.
+The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the repair guide and small diagnostic kit. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
 
 ```sh
 npm test
