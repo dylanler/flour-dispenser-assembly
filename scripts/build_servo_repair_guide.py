@@ -18,9 +18,10 @@ if report.exists():
     estimate=f"{data['predicted_grams']:.2f} g / about {round(data['predicted_seconds']/60)} minutes"
 html=f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V3.1 · replacement hopper only</title>
 <style>body{{font:16px system-ui;line-height:1.65;background:#f5f3ed;color:#293f34;max-width:960px;margin:35px auto;padding:0 22px}}h1,h2{{line-height:1.2}}h1{{font-size:38px}}aside{{padding:16px 20px;border-left:4px solid #b95c40;background:#eee4d7}}a{{color:#a4462b}}img{{width:100%;height:auto}}li{{margin:12px 0}}.button{{display:inline-block;background:#304b3c;color:white;padding:12px 18px;border-radius:5px;margin:12px 0}}@media print{{body{{font-size:11px}}.button{{display:none}}}}</style>
-<h1>Print only the corrected hopper.</h1>
+<h1>Hopper revision: horn seating unresolved.</h1>
+<aside><strong>2026-11-09: HOLD BEFORE PRINTING.</strong> Full shaft-to-horn seating has not been established. The 1 mm raise is an allowance for a nominal 0.3 mm case conflict, not a verified requirement for the purchased servo. The earlier print recommendation is withdrawn; this download remains a candidate. <a href="shaft_stack_review.json">Height-stack review</a>.</aside>
 <aside><strong>Keep the stand, gate, lid and both clips.</strong> This V3.1 replacement enlarges the servo opening and integrates the ear-height correction. The original full plate still contains the faulty hopper; do not print it again for this repair.</aside>
-<a class="button" href="PRINT_THIS_HOPPER_ONLY_V3_1.3mf" download>Download the hopper-only 3MF</a>
+<a class="button" href="PRINT_THIS_HOPPER_ONLY_V3_1.3mf" download>Candidate hopper 3MF — fit unresolved</a>
 <p>Alternative: <a href="07_HOPPER_SG90_RELIEF_V3_1.stl" download>replacement hopper STL</a>. Both contain the same corrected geometry. No separate test print is required for this chosen route. The 3MF contains one object and its flat orientation/layout, without printer or filament presets.</p>
 <h2>Bambu Studio settings</h2>
 <p>Select <strong>Bambu Lab A1 / 0.4 mm nozzle</strong>, textured PEI plate, and the PETG preset matching your spool. Use <strong>0.20 mm Standard</strong>, 3 walls, 5 top and 5 bottom layers, 20% gyroid, supports off, brim none. Keep the large flat flange on the bed, funnel pointing up. Reference Generic PETG slice: <strong>{estimate}</strong>; actual PETG HF estimates may differ. Preview the slice before sending.</p>

@@ -7,3 +7,5 @@ Do not label a hardware interface physically validated merely because meshes are
 Known issue: the original V3 hopper uses a round 14 mm servo opening that does not include the SG90 gearbox tail. The illustrated servo also omitted that tail. Do not recommend the original full plate as a verified SG90 fit. Consult docs/SERVO_FIT_AUDIT.md and the user's actual servo before issuing a repair or replacement.
 
 Current repair: the user explicitly declined a separate fit test and requested wider relief. Use the V3.1 hopper-only replacement and document the unverified actual servo/horn stack. Keep other prints; do not force another test print or recommend the original full plate.
+
+2026-11-09: V3.1 print recommendation withdrawn: full shaft-to-horn seating is unresolved. Refer to shaft_stack_review.json; do not recommend original or raised geometry as verified. The user wants review from existing schematics without a separate test print.
