@@ -1,0 +1,43 @@
+{
+  "status": "HOLD: shaft reach into gate volume established nominally; full horn engagement not established",
+  "reference": "User-supplied Addicore drawing, not verified as exact WWZMDiB variant",
+  "coordinates": "mm, original hopper flange underside z=0, top z=3; gate fixed at original nominal position",
+  "variants": [
+    {
+      "support_raise_mm": 0,
+      "support_top_z": 7,
+      "case_face_z": 2.7,
+      "case_clearance_over_flange_mm": -0.3,
+      "boss_face_z": -1.3,
+      "shaft_tip_z": -4.5,
+      "gate_top_z": -0.6,
+      "recess_floor_z": -4.0,
+      "shaft_tip_below_gate_top_mm": 3.9,
+      "shaft_tip_above_recess_floor_mm": -0.5,
+      "boss_face_above_recess_floor_mm": 2.7
+    },
+    {
+      "support_raise_mm": 1,
+      "support_top_z": 8,
+      "case_face_z": 3.7,
+      "case_clearance_over_flange_mm": 0.7,
+      "boss_face_z": -0.3,
+      "shaft_tip_z": -3.5,
+      "gate_top_z": -0.6,
+      "recess_floor_z": -4.0,
+      "shaft_tip_below_gate_top_mm": 2.9,
+      "shaft_tip_above_recess_floor_mm": 0.5,
+      "boss_face_above_recess_floor_mm": 3.7
+    }
+  ],
+  "missing": [
+    "Actual supplied horn spline socket entrance, depth and axial seating stop relative to arm contact face",
+    "Confirmed complete dimensional drawing for the purchased servo/horn combination"
+  ],
+  "conclusion": "Do not assert that the 1 mm raise is necessary for the actual unit or that the raised support provides full spline seating. The original nominal drawing stack has 0.3 mm case interference. The raised nominal stack clears the case by 0.7 mm, but shaft reach alone does not validate horn seating. No geometry changed in this review.",
+  "sources": [
+    "https://towerpro.com.tw/product/sg90-analog/",
+    "https://www.auselectronicsdirect.com.au/assets/brochures/TA0132.pdf"
+  ],
+  "source_limits": "Tower Pro is a different reference variant; TA0132 is another supplier variant and cannot establish the supplied WWZMDiB horn interface."
+}
