@@ -106,3 +106,12 @@ Source lookup refreshed before modeling: [Tower Pro manufacturer specifications]
 Generic PETG A1 0.4 slice: 86.64 g / 12129 seconds (~3 h 22 min), 6 objects, no supports, 0.20 mm layers, 3 walls, 5 top/bottom, 20% gyroid, textured PEI. See the current report and repair guide.
 
 V3.2 tie-routing review: hopper has 3.6 x 18 x 1.2 mm longitudinal underside channels for same-side slot pairs. The 3.6 mm channel roof is a short bridge in the flange-down print orientation. Gate tie bands moved to x=+/-13 mm, outside the stationary boss envelope, with upper grooves down to the horn-pocket floor and lower 0.6 mm grooves. Explicit 2.5 x 0.8 mm tie envelopes clear the gate and nominal servo sweep. Actual tie dimensions and restraint force remain unverified; upper servo runs must bear on case side edges rather than cross the shaft.
+
+
+## Interactive fit audit (2026-11-09)
+
+The V3.2 print geometry is unchanged. The fit simulation uses those STLs plus generated SG90 case/ears/boss/shaft geometry. Default horn arms are 35 x 10 x 2 mm, hub OD10, smooth socket bore4.8, socket depth2.8, boss-mouth gap0.6, arm outer face2mm beyond shaft tip. These horn values are assumptions, not a purchased-unit drawing. The default model gives 2.6 mm smooth-bore shaft overlap, 0.2 mm tip clearance and 0.5 mm gate gap. Real teeth, seating stop, threads and strength are not simulated. A 2 mm overlap screening criterion in the UI is an engineering assumption, not a manufacturer requirement.
+
+Full static and swept assembly audit: 1197 pairs, 29 positions (-70 to +70 every5deg), no unintended overlap above0.02 mm3. Includes all printed parts, SG90 reference, horn, routed tie envelopes, scale and example cup. Electronics, screw/cables, actual cup and scale CAD, clip/tie flexibility and force are not validated. Dynamic UI assumptions use analytic state checks; only the documented default has the complete solid audit. No physical fit or dispensing accuracy is inferred from the visuals.
+
+The outlet overlap area is analytic geometry: d=70*abs(sin(theta/2)), circles R7. Full closure begins near23.1 relative degrees, before the nominal60deg closed pose. Flow is not proportional to this area without measured powder behavior. The current precision objective is larger doses +/-10 mg, not the superseded1mg target.

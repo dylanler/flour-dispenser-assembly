@@ -4,7 +4,7 @@
 
 A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.
 
-**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [V3.2 repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
+**[V3.2 fit simulation](https://dylanler.github.io/flour-dispenser-assembly/fit-check.html)** · **[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [V3.2 repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
 ![V3 assembly](public/hardware/assembly_preview_v3.png)
 
@@ -65,3 +65,14 @@ npm run build
 **Not physically tested:** clip flex/insertion/retention, servo fit, supply performance, flour bridging, flow and leakage, or robot pickup. The gate has clearance, is not sealed and does not mechanically close on loss of power. Use supervised small flour trials. Printed food-contact surfaces need your own material/cleanability assessment; this is not certified food equipment or a metallic-powder design.
 
 Wi-Fi control is implemented. USB-C supports programming/REPL; Bluetooth and a separate continuous USB control protocol are not implemented. Public prototype AP defaults are `FlourProto` / `FlourTest26`; change them in `firmware/main.py` for shared environments. MIT license; no vendor affiliation.
+
+
+## V3.2 fit simulation and current precision target
+
+`fit-check.html` loads the actual V3.2 printed meshes, source-labelled SG90 reference geometry, an editable assumed horn/socket, optional packing, routed ties, clips, stand/lid, scale/example cup and illustrative electronics. Inspect whole assembly, underside, open half-section, x-ray and explosion. Move the gate through +/-70 degrees. The precomputed default audit found no unintended overlap in 1197 pair checks across 29 positions. Socket assumptions are editable and negative clearance/bottoming states are flagged; arbitrary parameter changes use analytic checks, not a new mesh audit. No physical fit claim is made.
+
+Generate its reference hardware and numerical report with `python scripts/build_fit_simulation.py`. The print STLs are unchanged. The socket is a smooth-bore approximation (not real teeth/threads); its default OD, depth, mouth gap and axial position are assumptions.
+
+Current user target is **larger doses with +/-10 mg**, superseding +/-1 mg. Servo position/aperture area is not a mass calibration. See the [accuracy assessment](public/hardware/simulation/MILLIGRAM_ACCURACY.html): measure repeatability, characterize fine pulses and settling, and add balance feedback for automatic correction. The current pocket scale is unconnected and its displayed resolution does not validate accuracy. No simulated powder dynamics or accuracy claim.
+
+[Overview](public/hardware/simulation/overview.png) · [Servo section](public/hardware/simulation/section.png) · [Numerical report](public/hardware/simulation/assembly_collision_report.json). Three known-bad fits were detected as negative controls.

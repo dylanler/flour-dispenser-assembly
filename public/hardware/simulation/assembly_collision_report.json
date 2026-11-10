@@ -1,0 +1,754 @@
+{
+  "scope": "Rigid geometric reference model, not physical fit/force/powder simulation",
+  "print_geometry": "Actual V3.2 STLs, unchanged",
+  "reference_horn": {
+    "arm_length": 35,
+    "arm_width": 10,
+    "arm_thickness": 2,
+    "outer_contact_z": -6.5,
+    "hub_OD": 10,
+    "socket_mouth_z": -1.9,
+    "socket_depth": 2.8,
+    "socket_bottom_z": -4.7,
+    "socket_bore_diameter": 4.8,
+    "shaft_tip_z": -4.5,
+    "shaft_overlap_mm": 2.6,
+    "shaft_tip_clearance_mm": 0.2,
+    "all_horn_socket_values_are_assumptions": true
+  },
+  "default_gap_mm": 0.5,
+  "default_packing_mm": 0,
+  "reference_static_checks": [
+    {
+      "a": "stand",
+      "b": "hopper",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "lid",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "clip_front",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "clip_rear",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "servo_case",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "servo_ears",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "stand",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "lid",
+      "overlap_mm3": 1.7e-05
+    },
+    {
+      "a": "hopper",
+      "b": "clip_front",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "clip_rear",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "servo_case",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "servo_ears",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "hopper",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "hopper",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "clip_front",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "clip_rear",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "servo_case",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "servo_ears",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "lid",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "clip_rear",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "servo_case",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "servo_ears",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_front",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "servo_case",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "servo_ears",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "clip_rear",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "servo_ears",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_case",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ears",
+      "b": "servo_boss",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ears",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ears",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ears",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ears",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_boss",
+      "b": "servo_shaft",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_boss",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_boss",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_boss",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_shaft",
+      "b": "servo_ties",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_shaft",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_shaft",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ties",
+      "b": "scale",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "servo_ties",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    },
+    {
+      "a": "scale",
+      "b": "example_cup",
+      "overlap_mm3": 0
+    }
+  ],
+  "sweep": [
+    {
+      "angle_degrees": -70,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -65,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -60,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -55,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -50,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -45,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -40,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -35,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -30,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -25,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -20,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -15,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -10,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": -5,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 0,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 5,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 10,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 15,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 20,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 25,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 30,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 35,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 40,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 45,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 50,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 55,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 60,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 65,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    },
+    {
+      "angle_degrees": 70,
+      "pairs_checked": 39,
+      "maximum_overlap_mm3": 0,
+      "interferences": []
+    }
+  ],
+  "collision_threshold_mm3": 0.02,
+  "unintended_interferences": [],
+  "physical_fit_verified": false,
+  "excluded_from_numerical_collision_validation": [
+    "Illustrative ESP32, breadboard, vibration module, terminal adapter, brick, cables and servo screw"
+  ],
+  "not_simulated": [
+    "Powder bridging, particles, discharge or dosing accuracy",
+    "PETG shrinkage, tolerances, fatigue, tie tension and clip bending",
+    "Servo backlash, supply peaks, motor drive compatibility",
+    "Real horn teeth, socket seating stop and thread engagement"
+  ],
+  "precision_requirement": {
+    "target": "Larger doses with +/-10 mg accuracy; supersedes earlier +/-1 mg target",
+    "supported_by_current_build": false,
+    "reason": "Open-loop gravity gate and unconnected pocket scale cannot demonstrate this accuracy."
+  },
+  "continuous_default_rotation_check": {
+    "method": "Rotationally invariant conservative envelopes versus all static solids; moving-part relative positions stay rigid. Applies only to documented default parameters.",
+    "checks": [
+      {
+        "moving_envelope": "gate",
+        "static_part": "stand",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "hopper",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "lid",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "clip_front",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "clip_rear",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "servo_case",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "servo_ears",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "servo_boss",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "servo_shaft",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "servo_ties",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "scale",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate",
+        "static_part": "example_cup",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "stand",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "hopper",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "lid",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "clip_front",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "clip_rear",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "servo_case",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "servo_ears",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "servo_boss",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "servo_shaft",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "servo_ties",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "scale",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "horn",
+        "static_part": "example_cup",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "stand",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "hopper",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "lid",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "clip_front",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "clip_rear",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "servo_case",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "servo_ears",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "servo_boss",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "servo_shaft",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "servo_ties",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "scale",
+        "overlap_mm3": 0
+      },
+      {
+        "moving_envelope": "gate_ties",
+        "static_part": "example_cup",
+        "overlap_mm3": 0
+      }
+    ],
+    "passed": true,
+    "scope": "Rigid nominal geometry, not force/tolerance/flow validation"
+  },
+  "negative_controls": [
+    {
+      "case": "Gate intentionally moved into flange",
+      "overlap_mm3": 18452.1214,
+      "detected": true
+    },
+    {
+      "case": "Socket depth reduced to1.5mm",
+      "overlap_mm3": 14.0894,
+      "detected": true
+    },
+    {
+      "case": "Horn arm enlarged to40x15mm",
+      "overlap_mm3": 223.1147,
+      "detected": true
+    }
+  ],
+  "simplified_envelopes_included_in_collision_check": [
+    "105x125x17mm scale box",
+    "Example cup OD60x80mm, not user-specified"
+  ]
+}

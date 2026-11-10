@@ -33,3 +33,16 @@ Those results do not include SG90 clone dimensions, mounting tape, wires or rete
 This repository has not been flashed to the purchased ESP32. GPIO voltage compatibility of the exact vibration module, servo pulse mapping, horn/shim fit, USB/CH340 behavior, supply performance, adhesion, locking clips, flour flow and sealing have not been physically tested. MicroPython code was syntax checked and exercised through hardware mocks, not executed on this ESP32.
 
 Do not interpret a passing simulation, browser test or firmware test as a measured dispensing result. Follow the arrival checks and small supervised flour trial in the guide.
+
+
+## Current V3.2 fit laboratory
+
+The actual V3.2 print meshes are unchanged. `scripts/build_fit_simulation.py` exports source-labelled SG90 reference meshes and a smooth-bore assumed horn. Its full assembly static/sweep check evaluates 1197 pairs across29 gate positions with no unintended intersection above0.02 mm3 in the default model. Three negative controls detect deliberately inserted gate/flange overlap, a shallow horn socket and an oversized arm. Do not treat those checks as actual purchased-unit fit verification.
+
+Interactive viewer: `fit-check.html`. `npm test` includes four independent fit/aperture tests. Optional browser QA: `python scripts/check_fit_simulation.py --url http://127.0.0.1:4188/fit-check.html`. Verified whole/interface/underside/section/x-ray views, animation, socket bottoming warning, excessive gap warning, gate interference warning, visibility controls, local links and mobile resize. Overview and section screenshots are in `public/hardware/simulation/`.
+
+Live socket/packing edits are analytic geometry previews, not fresh solid booleans. Default mouth gap0.6, depth2.8 and hubOD10 are assumed. A 2 mm overlap screening threshold is not a manufacturer requirement. Electronics/screw/cables are illustrative and excluded from numerical validation; scale/cup are simplified envelopes. No FE/clip/tie mechanics, real spline/threads, powder dynamics or dosing accuracy is simulated.
+
+The current target is larger doses +/-10 mg, superseding1mg. See the linked feasibility assessment. Existing firmware is open loop; the pocket scale has no data connection. Success in a geometry/browser test does not establish dispensing performance.
+
+Additional continuous nominal-rotation check: rotationally invariant conservative envelopes for the gate, horn and gate ties clear all12 static solids. This covers static interference between sampled angles for default parameters. Moving-part relative positions stay fixed. It does not establish tolerances or real horn dimensions.
