@@ -29,6 +29,7 @@ jobs:
       - run: python public/hardware/source/regenerate_v3.py
       - run: python scripts/build_servo_fit_kit.py
       - run: python scripts/build_replacement_hopper.py
+      - run: python scripts/build_repair_v3_2.py
       - run: python scripts/build_servo_repair_guide.py
       - run: node scripts/build-guide.js
       - run: npm run build

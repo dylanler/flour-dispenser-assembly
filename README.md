@@ -1,12 +1,10 @@
 # Flour / V3 — wide scale bay, printed locking clips
 
-> **HOLD BEFORE PRINTING (2026-11-09): shaft-to-horn seating is unresolved.** The earlier print recommendation is withdrawn; see [height-stack review](public/hardware/servo-fit/shaft_stack_review.json).
-
-> **V3.1 hopper-only candidate (2026-11-07):** [Print this replacement hopper](public/hardware/servo-fit/PRINT_THIS_HOPPER_ONLY_V3_1.3mf). The servo opening is now Ø15 mm with an 8 mm-wide tail relief reaching 11 mm from the shaft centre; the ear supports are raised 1 mm and extended. Keep the stand, gate, lid and clips. [Assembly instructions](public/hardware/servo-fit/REPAIR_GUIDE.html). Reference PETG slice: 61.33 g / about 2 h 24 min. Based on the supplied drawing; physical fit of the purchased servo remains unverified. The user chose this replacement without a separate test print. Do not reprint the original full plate.
+> **Current repair: V3.2, original servo height.** [Download the repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) and follow the [assembly guide](public/hardware/servo-fit/REPAIR_GUIDE.html). Replace the hopper and gate only; keep the stand, lid and clips. A local case recess replaces the earlier servo raise. The gate accepts larger horns and includes optional packing so the supplied horn seats fully first. One PETG plate: **86.64 g / about 3 h 22 min**. Best-effort prototype, physically untested; exact horn seating remains an assumption accommodated over a finite adjustment range. Original V3 and V3.1 files are superseded for this repair.
 
 A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.
 
-**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [Replacement hopper only](public/hardware/servo-fit/PRINT_THIS_HOPPER_ONLY_V3_1.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
+**[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [V3.2 repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
 ![V3 assembly](public/hardware/assembly_preview_v3.png)
 
@@ -15,8 +13,8 @@ A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5
 | Stand footprint and height | 224 × 140 × 190 mm |
 | Clear width between side walls | 200 mm |
 | Scale from the supplied image | 105 mm wide × 125 mm deep × 17 mm high; 500 g maximum |
-| Nominal gate underside above table | 180.2 mm |
-| Conservative space below screw/hardware | About 175 mm; measure the real assembly |
+| Nominal gate underside above table | 178.3 mm with V3.2 gate |
+| Conservative space below screw/hardware | About 173 mm with V3.2; measure the real assembly |
 | Example collection cup | Ø60 × 80 mm, **assumed**, not specified by the user |
 | Print plate | All six pieces on one A1 plate |
 
@@ -54,7 +52,7 @@ npm ci
 npm run dev
 ```
 
-The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the hopper-only repair guide. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
+The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the V3.2 repair guide. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
 
 ```sh
 npm test
@@ -62,7 +60,7 @@ python -m unittest discover -s tests -p "test_*.py"
 npm run build
 ```
 
-[Validation details](docs/VALIDATION.md) distinguish software, mesh and slicer checks from physical performance. `public/hardware/source/regenerate_v3.py` regenerates V3 CAD; its dependencies are listed beside it. V2 files remain explicitly named as V2 for users of the previous print. The original V3 plate still contains the faulty hopper: use the separately named V3.1 replacement hopper for this repair.
+[Validation details](docs/VALIDATION.md) distinguish software, mesh and slicer checks from physical performance. `public/hardware/source/regenerate_v3.py` regenerates V3 CAD; its dependencies are listed beside it. V2 files remain explicitly named as V2 for users of the previous print. The original V3 plate still contains the faulty hopper/gate: use the separately named V3.2 repair plate for this repair.
 
 **Not physically tested:** clip flex/insertion/retention, servo fit, supply performance, flour bridging, flow and leakage, or robot pickup. The gate has clearance, is not sealed and does not mechanically close on loss of power. Use supervised small flour trials. Printed food-contact surfaces need your own material/cleanability assessment; this is not certified food equipment or a metallic-powder design.
 

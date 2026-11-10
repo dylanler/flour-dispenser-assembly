@@ -1,0 +1,334 @@
+{
+  "not_a_measurement": true,
+  "assumed_horn_contact_range_z": [
+    -6.8,
+    -3.6
+  ],
+  "solutions": [
+    {
+      "horn_contact_z": -6.8,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.8
+    },
+    {
+      "horn_contact_z": -6.75,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -6.7,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -6.65,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -6.6,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -6.55,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -6.5,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -6.45,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -6.4,
+      "packing_mm": 0.0,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -6.35,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -6.3,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -6.25,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -6.2,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -6.15,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -6.1,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -6.05,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -6.0,
+      "packing_mm": 0.4,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -5.95,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -5.9,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -5.85,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -5.8,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -5.75,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -5.7,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -5.65,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -5.6,
+      "packing_mm": 0.8,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -5.55,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -5.5,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -5.45,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -5.4,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -5.35,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -5.3,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -5.25,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -5.2,
+      "packing_mm": 1.2,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -5.15,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -5.1,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -5.05,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -5.0,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -4.95,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -4.9,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -4.85,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -4.8,
+      "packing_mm": 1.6,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -4.75,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -4.7,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -4.65,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -4.6,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -4.55,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -4.5,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -4.45,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -4.4,
+      "packing_mm": 2.0,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -4.35,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -4.3,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -4.25,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -4.2,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -4.15,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -4.1,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -4.05,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -4.0,
+      "packing_mm": 2.4,
+      "gate_gap_mm": 0.4
+    },
+    {
+      "horn_contact_z": -3.95,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.75
+    },
+    {
+      "horn_contact_z": -3.9,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.7
+    },
+    {
+      "horn_contact_z": -3.85,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.65
+    },
+    {
+      "horn_contact_z": -3.8,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.6
+    },
+    {
+      "horn_contact_z": -3.75,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.55
+    },
+    {
+      "horn_contact_z": -3.7,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.5
+    },
+    {
+      "horn_contact_z": -3.65,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.45
+    },
+    {
+      "horn_contact_z": -3.6,
+      "packing_mm": 2.8,
+      "gate_gap_mm": 0.4
+    }
+  ]
+}

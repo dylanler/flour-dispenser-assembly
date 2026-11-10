@@ -9,3 +9,5 @@ Known issue: the original V3 hopper uses a round 14 mm servo opening that does n
 Current repair: the user explicitly declined a separate fit test and requested wider relief. Use the V3.1 hopper-only replacement and document the unverified actual servo/horn stack. Keep other prints; do not force another test print or recommend the original full plate.
 
 2026-11-09: V3.1 print recommendation withdrawn: full shaft-to-horn seating is unresolved. Refer to shaft_stack_review.json; do not recommend original or raised geometry as verified. The user wants review from existing schematics without a separate test print.
+
+Current best-effort revision superseding V3.1: V3.2, requested after user said to check everything and give best shot. No servo support raise; shallow case recess, revised gate, optional gate-floor packing. User accepts no separate test print. No claim of physical validation. Use V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf and repair_v3_2_report.json. Keep stand/lid/clips. User says horn adds around 2 mm; this is an estimate with ambiguous datum, not a socket-depth measurement. Horn goes on below hopper afterward: it need not pass through the hopper opening.

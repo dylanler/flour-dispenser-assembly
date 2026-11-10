@@ -85,3 +85,24 @@ Hopper flange underside z0, upper surface z3; gate top z-0.6, horn arm recess fl
 Reach into the gate region does not establish spline engagement. The gate has a central through-hole, so the arm-recess floor is not the socket bottom. The actual horn socket entrance, axial stop and arm contact plane are needed. The animation used an assumed solid horn, without its socket.
 
 The 1 mm raise is an allowance for the nominal 0.3 mm conflict, not a manufacturer requirement or proof of necessity for the actual servo. Online sources rechecked: Tower Pro SG90 Analog specification and Aus Electronics Direct TA0132 supplier drawing, including horn dimensions. Neither establishes the purchased WWZMDiB horn seating geometry. Do not combine their different variants as verified dimensions. See [calculation report](../public/hardware/servo-fit/shaft_stack_review.json).
+
+
+## Current V3.2 best-effort repair (2026-11-09)
+
+User authorized a best shot from available drawings, with no separate test print. The horn is installed after the servo is through the hopper; it never has to pass through the hopper opening. Their approximately 2 mm added horn height is an estimate with an unspecified datum. Do not silently turn it into a socket-depth specification.
+
+V3.2 keeps the original ear height (4 mm over the flange). Instead of raising the servo, a 1 mm-deep local rectangular case recess leaves 2 mm of flange below it and provides nominal 0.7 mm body clearance. The boss opening is a modest diameter 14.4 mm, 6.6 mm tail width, tip reach 9.8 mm. Flange/clip/outlet interfaces and shaft XY location remain unchanged.
+
+The replacement gate is 7.4 mm thick with a 37 x 12 mm horn arm pocket and 11.2 mm central through-hole, plus a 22 mm x 2 mm upper counter-relief for the stationary boss sweep. It checks both 32 and 35 x 10 x 2 mm arm envelopes. The hub OD allowance of 10 mm is assumed from the image, not a supplied dimension. The original 32 x 9 mm gate pocket is superseded; a new gate is required for this adjustable route.
+
+The arm pocket floor is 1.4 mm above the gate bottom. Included packing rings 0.4/0.8/1.6 mm combine to 0...2.8 mm in 0.4 mm steps. Seat the real supplied horn completely first; select packing below its arms to obtain 0.4...0.8 mm gate gap. Packing lowers the gate without changing spline engagement. No need to invent a socket depth or partly unseat the horn. It is a finite adjustment allowance, not a guarantee. The included 0.6 mm strip is a removable assembly aid.
+
+Nominal stack, hopper bottom z0: ear plane z7, case face z2.7, boss face z-1.3, shaft tip z-4.5. At 0.6 mm gate gap, gate top z-0.6, bottom z-8.0. For arm outer contact plane P and packing S, gate gap = S - P - 6.0 mm. The available S values cover P=-6.8...-3.6 at some gap in 0.4...0.8. Thus they accommodate 2.3 mm beyond to 0.9 mm short of the nominal bare shaft tip. If the user's 2 mm means arm outer face beyond shaft tip, P=-6.5, S=0 yields a 0.5 mm gap. If it refers to another face, that example is invalid.
+
+Validated digitally: watertight connected pieces, plate bounds and separation, change confined to servo interface, nominal complete servo clearance, +1.5% boss XY envelope, gate sweep at 0.4/0.6/0.8 mm gaps against hopper/servo/stand, both horn arm envelopes and packing combinations, outlet open/closed coverage. Full horn socket geometry is not modeled; actual horn seating is preserved by assembly order, with bounded gate adjustment. Physical PETG fit, clip force, motor input logic, electronics supply, flour flow/leakage and robot pickup remain unverified. No stand reprint or new electronics is called for.
+
+Source lookup refreshed before modeling: [Tower Pro manufacturer specifications](https://towerpro.com.tw/product/sg90-analog/) and [TA0132 supplier drawings](https://www.auselectronicsdirect.com.au/assets/brochures/TA0132.pdf). Neither is treated as a verified WWZMDiB drawing. Detailed user-provided servo dimensions drive the reference model; the latest user image drives the larger horn-arm envelope. The earlier 360-degree label is not treated as proof of the actual purchased servo type.
+
+Generic PETG A1 0.4 slice: 86.64 g / 12129 seconds (~3 h 22 min), 6 objects, no supports, 0.20 mm layers, 3 walls, 5 top/bottom, 20% gyroid, textured PEI. See the current report and repair guide.
+
+V3.2 tie-routing review: hopper has 3.6 x 18 x 1.2 mm longitudinal underside channels for same-side slot pairs. The 3.6 mm channel roof is a short bridge in the flange-down print orientation. Gate tie bands moved to x=+/-13 mm, outside the stationary boss envelope, with upper grooves down to the horn-pocket floor and lower 0.6 mm grooves. Explicit 2.5 x 0.8 mm tie envelopes clear the gate and nominal servo sweep. Actual tie dimensions and restraint force remain unverified; upper servo runs must bear on case side edges rather than cross the shaft.

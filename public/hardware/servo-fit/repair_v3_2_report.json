@@ -1,0 +1,114 @@
+{
+  "version": "V3.2 best-effort repair",
+  "physical_fit_verified": false,
+  "servo_tie_channels_mm": [
+    3.6,
+    18,
+    1.2
+  ],
+  "gate_tie_width_thickness_checked_mm": [
+    2.5,
+    0.8
+  ],
+  "servo_support_raise_mm": 0,
+  "case_relief_depth_mm": 1,
+  "nominal_case_clearance_above_relief_mm": 0.7,
+  "opening": {
+    "round_diameter_mm": 14.4,
+    "tail_width_mm": 6.6,
+    "tail_reach_from_axis_mm": 9.8
+  },
+  "gate": {
+    "thickness_mm": 7.4,
+    "arm_pocket_mm": [
+      37,
+      12
+    ],
+    "pocket_floor_mm": 1.4,
+    "hub_through_hole_mm": 11.2,
+    "boss_sweep_relief_mm": [
+      22,
+      2
+    ],
+    "arm_thickness_assumption_mm": 2,
+    "arm_lengths_checked_mm": [
+      32,
+      35
+    ]
+  },
+  "packing_mm": [
+    0.4,
+    0.8,
+    1.6
+  ],
+  "packing_combinations_mm": [
+    0.0,
+    0.4,
+    0.8,
+    1.2,
+    1.6,
+    2.0,
+    2.4,
+    2.8
+  ],
+  "target_gate_gap_mm": [
+    0.4,
+    0.8
+  ],
+  "adjustable_horn_contact_plane_range_z": [
+    -6.8,
+    -3.6
+  ],
+  "user_2mm_extension_example": {
+    "status": "Assumption only: 2 mm is interpreted as outer arm face beyond bare shaft tip",
+    "horn_contact_z": -6.5,
+    "packing_mm": 0,
+    "resulting_gate_gap_mm": 0.5
+  },
+  "nominal_height_stack_at_gap_0p6": {
+    "case_face_z": 2.7,
+    "boss_face_z": -1.3,
+    "shaft_tip_z": -4.5,
+    "gate_top_z": -0.6,
+    "gate_bottom_z": -8,
+    "horn_arm_contact_plane_range_z": [
+      -6.6,
+      -3.8
+    ],
+    "shaft_tip_to_arm_outer_face_range_mm": [
+      -0.7,
+      2.1
+    ]
+  },
+  "sources": [
+    "User detailed SG90 drawing: case 22.7, upper ear face 18.4, boss 4, shaft 3.2 mm; variant not confirmed.",
+    "User latest horn image: 35 x 10 mm envelope; earlier image 32 mm length.",
+    "User estimate: horn adds around 2 mm; axial datum not specified, not a measured socket depth.",
+    "https://towerpro.com.tw/product/sg90-analog/",
+    "https://www.auselectronicsdirect.com.au/assets/brochures/TA0132.pdf"
+  ],
+  "checks": [
+    "Connected watertight meshes and separate non-overlapping one-plate layout",
+    "Unchanged original flange/clip/outlet interfaces outside servo region",
+    "Nominal complete case, ears, boss, shaft and +1.5% XY boss envelope clear",
+    "Gate sweep -70 to +70 deg with 0.4 to 0.8 mm gap clears hopper, servo and stand",
+    "32 and 35 x 10 x 2 mm horn arm envelopes clear gate for every packing combination",
+    "Servo underside tie runs and gate tie loops clear printed geometry; gate ties clear case and boss through sweep",
+    "Open outlet at 0 degrees and covered at 60 degrees",
+    "Packing selection spans contact planes -6.8 to -3.6 mm for target gap 0.4 to 0.8 mm"
+  ],
+  "limits": [
+    "Exact servo/horn variant and socket depth unknown; use original horn fully seated rather than modeled printed spline",
+    "Gate adjustment covers stated finite range; actual arm plane may fall outside it",
+    "Horn hub diameter allowance 10 mm is an assumption from image, not a dimensioned hub drawing",
+    "PETG fit, clip retention, motor logic, flow and leakage remain physically untested"
+  ],
+  "reuse": [
+    "Stand",
+    "Lid",
+    "Both locking clips",
+    "Servo with supplied horn and screw",
+    "Electronics and wiring"
+  ],
+  "assembly": "Seat supplied horn fully first. Select packing under horn arms to obtain 0.4-0.8 mm gate gap; packing increases gap. Never pull an unseated horn in with its screw or tighten ties to remove interference."
+}
