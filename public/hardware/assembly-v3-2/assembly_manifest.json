@@ -1,0 +1,47 @@
+{
+  "version": "V3.2",
+  "steps": 17,
+  "actual_print_meshes": [
+    "stl/01_wide_cradle.stl",
+    "servo-fit/08_HOPPER_ORIGINAL_SERVO_HEIGHT_V3_2.stl",
+    "servo-fit/09_GATE_ADJUSTABLE_HORN_V3_2.stl",
+    "stl/04_lid.stl",
+    "simulation/front_clip_assembled.stl",
+    "simulation/rear_clip_assembled.stl",
+    "simulation/horn_assumed_reference.stl",
+    "simulation/gate_ties_reference.stl",
+    "simulation/servo_ties_reference.stl",
+    "servo-fit/11_ASSEMBLY_GAP_SPACER_0p6_V3_2.stl",
+    "servo-fit/10_HORN_PACKING_0p4_V3_2.stl",
+    "servo-fit/10_HORN_PACKING_0p8_V3_2.stl",
+    "servo-fit/10_HORN_PACKING_1p6_V3_2.stl",
+    "simulation/servo_case.stl",
+    "simulation/servo_ears.stl",
+    "simulation/servo_boss.stl",
+    "simulation/servo_shaft.stl"
+  ],
+  "jumper_ids": [
+    "W01",
+    "W02",
+    "W03",
+    "W04",
+    "W05",
+    "W06",
+    "W07",
+    "W08",
+    "U1",
+    "W09",
+    "W10",
+    "W11"
+  ],
+  "checked": "Horn absent at centering; fully seated horn shown before gate; current gate default pose; four numbered wiring stages",
+  "physical_fit_verified": false,
+  "video_speed": 2,
+  "video": {
+    "width": 1280,
+    "height": 960,
+    "duration": 94.601,
+    "file": "flour-v3-2-assembly.webm",
+    "seek_metadata_finalized": true
+  }
+}

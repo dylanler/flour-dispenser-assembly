@@ -1,4 +1,6 @@
-# Flour / V3 — wide scale bay, printed locking clips
+# Flour / V3.2 — current assembly, retained stand and locking clips
+
+**[Complete V3.2 assembly guide](public/hardware/BUILD_GUIDE_V3_2.html)** · [Current captioned video](public/flour-v3-2-assembly.webm) · [Live step-by-step animation](https://dylanler.github.io/flour-dispenser-assembly/)
 
 **[Every wire, end to end](https://dylanler.github.io/flour-dispenser-assembly/hardware/wiring/WIRING_GUIDE.html)** — numbered W01–W11 walkthrough, exact breadboard holes, connector ends and power-up sequence. This defined map uses four five-hole strips; long rails are unused. Module IN remains conditional on the actual input circuit.
 
@@ -8,7 +10,7 @@ A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5
 
 **[V3.2 fit simulation](https://dylanler.github.io/flour-dispenser-assembly/fit-check.html)** · **[Interactive assembly film](https://dylanler.github.io/flour-dispenser-assembly/)** · [V3.2 repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) · [V3 build guide](public/hardware/BUILD_GUIDE_V3.html) · [Mac/Python setup](docs/SOFTWARE.md) · [Parts](docs/PARTS.md)
 
-![V3 assembly](public/hardware/assembly_preview_v3.png)
+![Current V3.2 assembly](public/hardware/assembly-v3-2/step-17.png)
 
 | Dimension | V3 design |
 |---|---|
@@ -22,18 +24,16 @@ A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5
 
 The scale rests on the table inside the opening and does not touch the stand. The robot collects the **cup under the dispenser**, not the hopper. Keep the front approach clear. Space is provided for fingers around the example cup; actual YAM/SO-101 reach, wrist, gripper and cup compatibility are **not validated**. See [scale and robot clearance](docs/ROBOT_CLEARANCE.md).
 
-## Original V3 layout — full print on hold
+## Current V3.2 assembly
 
-1. **Reference only until servo fit is resolved:** [A1_V3_WIDE_ONE_PLATE.3mf](public/hardware/A1_V3_WIDE_ONE_PLATE.3mf) in Bambu Studio. This is geometry only. Select A1 / 0.4 mm, 0.2 mm layers, 3 walls, 5 top/bottom layers, 20% gyroid, no supports. **Keep the nested layout/orientations:** the gate prints inside the stand opening and both clips inside its left roof window. All pieces remain separate.
-2. The actual slicer check estimates **463.94 g and 14 h 53 min 31 s**. This is longer/heavier than V2 because the stand is much wider and taller. Check adhesion and the full preview before printing.
-3. Turn the stand over. Attach the servo above the flange with two zip ties. Mount the vibration module on the hopper exterior. Center the servo electronically before fitting the horn.
-4. The **horn is the small plastic double-arm part supplied with the SG90**, not a printed part. Tie it into the printed gate recess, socket upward, and fit the supplied center screw. Adjust ear shims for about 0.4–0.8 mm gate clearance.
-5. Seat the hopper and push in the two printed C-clips: front-left and rear-right. The upper jaws capture the flange; lower hooks click into stand recesses. Tug-check both clips. To remove, stop/unplug, press the lower release tabs downward and slide the clips out.
-6. Tape the 400-point breadboard to the **right outer wall**, ESP32 to the **left outer wall**, with USB-C accessible toward the front. Keep all wiring outside the bay and clear of the scale and clip tabs.
+1. Retain the stand, lid and both printed locking clips. Use the V3.2 hopper/gate and included optional aids.
+2. Insert and tie the servo in the local case pocket at its original support height. No added servo-ear shims. Attach the motor module unpowered.
+3. Mount the ESP32 and 400-point breadboard separately on the outside walls. Wire and check W01–W08; leave motor VCC/IN off during servo-only tests.
+4. Install MicroPython and center the bare servo. Unplug, fully seat the supplied horn on the shaft and secure its centre screw.
+5. Lift the new gate around the seated horn. Start without packing. Add only needed packing below the horn arms for 0.4–0.8 mm clearance, then secure through the gate grooves. The 0.6 mm strip is a reference aid, not a pass/fail gauge for every valid gap.
+6. Seat the head, refit both clips, secure cables, and add W09–W11 only after module input verification. Calibrate empty before flour.
 
-![Actual CAD section through a locking clip](public/hardware/clip_detail_v3.svg)
-
-The clips print flat on their broad side, with flexure within the layers. PLA is the sliced prototype material; PETG may tolerate repeated flexing better, but neither fit nor fatigue has been physically tested. Before the 15-hour print, you can print one clip and [the optional small fit coupon](public/hardware/stl/06_OPTIONAL_CLIP_FIT_COUPON.stl) to check snapping and release. The coupon is not part of the six-piece full plate. Do not force an overly tight hook.
+A1 / 0.4 mm, matching PETG preset, 0.20 mm layers, 3 walls, 5 top/bottom layers, **15% gyroid, supports off**. The earlier 86.64 g / 3 h 22 min reference was sliced at 20%; the 15% estimate will differ. Original V3/V3.1 assets remain for history and audit, not for this repair. No print geometry changed in this instruction update.
 
 ## Power and Python
 
@@ -54,7 +54,7 @@ npm ci
 npm run dev
 ```
 
-The animation is retained as an older assembly reference. Its simplified servo omitted the actual gearbox tail. Video export is paused while the servo fit issue is unresolved; use the V3.2 repair guide. The scene loads the original V3 printed geometry. Electronics and robot motion are not manufacturing/collision models.
+The main animation and full guide use actual V3.2 hopper/gate/packing meshes and the source-labelled SG90/horn reference. Horn seating precedes gate installation. Wiring stages show numbered SVG maps. Video export includes the maps and captions; the current hosted file is `flour-v3-2-assembly.webm`, a 2× overview. Use the live player at 1× or the written steps for slower assembly. Actual horn dimensions and physical performance remain unverified. Earlier V3 videos are historical and are not promoted.
 
 ```sh
 npm test

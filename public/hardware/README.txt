@@ -1,3 +1,4 @@
-Flour V3: start with BUILD_GUIDE_V3.html or the repository README.
-Use firmware/ at the repository root for MicroPython; older Arduino firmware is not included.
-Both printed locking clips are required. Scale: 105 x 125 x 17 mm; example cup: diameter 60 x 80 mm, not yet confirmed. Exact motor input compatibility and all physical performance remain unverified.
+Current build: V3.2. Open BUILD_GUIDE_V3_2.html.
+Reprint only hopper/gate from servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf; retain stand/lid/clips.
+Wiring: wiring/WIRING_GUIDE.html. MicroPython: repository docs/SOFTWARE.md.
+No servo-ear shims; supplied horn seats first, optional packing under horn arms in gate. Physically unverified prototype.
