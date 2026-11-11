@@ -15,14 +15,14 @@
 <g fill="#293f34"><circle cx="563" cy="187" r="5"/><circle cx="563" cy="221" r="5"/><circle cx="563" cy="255" r="5"/><circle cx="563" cy="289" r="5"/></g>
 <text x="340" y="143" class="small">USB-A male adapter plugs into the port</text>
 <rect x="806" y="135" width="270" height="200" rx="8" fill="#f0eddf" stroke="#acb7a4"/>
-<text x="829" y="167">Breadboard buses</text>
+<text x="829" y="167">Breadboard strips</text>
 <path d="M828 201h222" class="wire" stroke="#b94a3f"/><path d="M828 289h222" class="wire" stroke="#33433c"/>
 <path d="M568 187h70q25 0 25 14h166" class="wire" stroke="#b94a3f"/>
 <path d="M568 289h261" class="wire" stroke="#33433c"/>
 <text x="688" y="185" class="small">+5V / VCC / VBUS</text><text x="701" y="276" class="small">GND / −</text>
 <text x="596" y="232" class="small">D+ and D−:</text><text x="596" y="253" class="small">leave empty</text>
-<text x="831" y="232" class="small">→ Servo red + module VCC</text>
-<text x="831" y="315" class="small">→ Servo/module/ESP32 GND</text>
+<text x="831" y="232" class="small">Row 1 (A–E): +5V loads</text>
+<text x="831" y="315" class="small">Row 3 (A–E): common GND</text>
 <text x="38" y="383">Wires leave the green screw-terminal block. The brick has no added top connections.</text>
 <text x="38" y="414">The MacBook separately powers/programs the ESP32 through USB-C. Grounds are shared.</text>
 <text x="38" y="453" class="small">Unplug while wiring; clamp suitable solid jumper ends securely. AC input is omitted; do not modify the brick.</text>

@@ -1,0 +1,11 @@
+{
+  "wires": 11,
+  "female_to_male": 6,
+  "male_to_male": 5,
+  "unique_holes": true,
+  "power_and_signal_nets_separate": true,
+  "firmware_gpio18_servo_gpio19_motor": true,
+  "rails_used": false,
+  "module_IN_connection_conditional": true,
+  "physical_wiring_tested": false
+}

@@ -1,0 +1,112 @@
+{
+  "wires": [
+    {
+      "id": "W01",
+      "from": "USB-A adapter +5V / VCC / VBUS",
+      "to": "A1",
+      "net": "5V",
+      "type": "M\u2013M / solid ended",
+      "color": "#bb493d",
+      "note": "Brick unplugged. Clamp one solid-ended lead in the terminal explicitly marked +5V, VCC or VBUS; male breadboard end into A1. Leave D+ and D\u2212 empty."
+    },
+    {
+      "id": "W02",
+      "from": "USB-A adapter GND / \u2212",
+      "to": "A3",
+      "net": "GND",
+      "type": "M\u2013M / solid ended",
+      "color": "#374b43",
+      "note": "Use the terminal explicitly marked GND. D\u2212 is a data terminal, not ground. Male breadboard end into A3."
+    },
+    {
+      "id": "W03",
+      "from": "ESP32 GND",
+      "to": "B3",
+      "net": "GND",
+      "type": "F\u2013M",
+      "color": "#374b43",
+      "note": "Female jumper socket over a male header pin labelled GND. Male end into B3. This joins computer-powered ESP32 ground to external supply ground."
+    },
+    {
+      "id": "W04",
+      "from": "ESP32 GPIO18 / IO18 / D18",
+      "to": "A5",
+      "net": "SERVO",
+      "type": "F\u2013M",
+      "color": "#b47b17",
+      "note": "Find the header label 18, IO18 or D18. This means GPIO18, not the eighteenth header pin. Female on the ESP32 header; male into A5."
+    },
+    {
+      "id": "W05",
+      "from": "ESP32 GPIO19 / IO19 / D19",
+      "to": "A7",
+      "net": "MOTOR",
+      "type": "F\u2013M",
+      "color": "#397ab2",
+      "note": "Female on the ESP32 pin labelled 19 / IO19 / D19; male into A7. Keep the module IN lead (W11) disconnected until the actual module input circuit is verified."
+    },
+    {
+      "id": "W06",
+      "from": "SG90 red lead, female servo socket",
+      "to": "B1",
+      "net": "5V",
+      "type": "M\u2013M",
+      "color": "#bb493d",
+      "note": "Insert one male jumper pin into the servo socket cavity attached to its red wire; other male end into B1. Do not cut the servo cable."
+    },
+    {
+      "id": "W07",
+      "from": "SG90 brown / black lead, female servo socket",
+      "to": "C3",
+      "net": "GND",
+      "type": "M\u2013M",
+      "color": "#374b43",
+      "note": "Male jumper into the servo socket cavity attached to brown/black; other male end into C3. Keep the three inserted pins insulated and seated."
+    },
+    {
+      "id": "W08",
+      "from": "SG90 orange / yellow lead, female servo socket",
+      "to": "B5",
+      "net": "SERVO",
+      "type": "M\u2013M",
+      "color": "#b47b17",
+      "note": "Male jumper into the servo socket cavity attached to orange/yellow; other male into B5. A5 and B5 share one strip, completing GPIO18 \u2192 servo signal."
+    },
+    {
+      "id": "W09",
+      "from": "Vibration module VCC / +",
+      "to": "C1",
+      "net": "5V",
+      "type": "F\u2013M",
+      "color": "#bb493d",
+      "note": "Read the module label; its header order may differ from the diagram. Female on VCC / +; male into C1. This is a driver module, not a bare motor. For initial servo-only testing leave W09 unplugged so an unverified floating IN cannot start the motor."
+    },
+    {
+      "id": "W10",
+      "from": "Vibration module GND / \u2212",
+      "to": "D3",
+      "net": "GND",
+      "type": "F\u2013M",
+      "color": "#374b43",
+      "note": "Female jumper on the module header labelled GND / \u2212; male end into D3."
+    },
+    {
+      "id": "W11",
+      "from": "Vibration module IN / S / signal",
+      "to": "B7",
+      "net": "MOTOR",
+      "type": "F\u2013M",
+      "color": "#397ab2",
+      "conditional": true,
+      "note": "LEAVE DISCONNECTED until the actual module accepts 3.3V control with its 5V supply, without exposing GPIO19 to 5V. A low IN voltage reading alone does not prove compatibility. If verified, power off, place female on IN / S and male into B7. A7 and B7 complete the GPIO19 PWM path."
+    }
+  ],
+  "groups": {
+    "A1\u2013E1": "+5V only",
+    "A3\u2013E3": "Common GND",
+    "A5\u2013E5": "GPIO18 \u2194 servo signal",
+    "A7\u2013E7": "GPIO19 \u2194 module IN, conditional"
+  },
+  "board": "400 point solderless board; use the A\u2013E side only. First 8 rows shown. Verify actual strip continuity before power. Long edge rails unused.",
+  "header_positions_verified": false
+}

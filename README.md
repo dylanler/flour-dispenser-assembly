@@ -1,5 +1,7 @@
 # Flour / V3 — wide scale bay, printed locking clips
 
+**[Every wire, end to end](https://dylanler.github.io/flour-dispenser-assembly/hardware/wiring/WIRING_GUIDE.html)** — numbered W01–W11 walkthrough, exact breadboard holes, connector ends and power-up sequence. This defined map uses four five-hole strips; long rails are unused. Module IN remains conditional on the actual input circuit.
+
 > **Current repair: V3.2, original servo height.** [Download the repair plate](public/hardware/servo-fit/V3_2_REPAIR_PLATE_HOPPER_GATE_PACKING.3mf) and follow the [assembly guide](public/hardware/servo-fit/REPAIR_GUIDE.html). Replace the hopper and gate only; keep the stand, lid and clips. A local case recess replaces the earlier servo raise. The gate accepts larger horns and includes optional packing so the supplied horn seats fully first. One PETG plate: **86.64 g / about 3 h 22 min**. Best-effort prototype, physically untested; exact horn seating remains an assumption accommodated over a finite adjustment range. Original V3 and V3.1 files are superseded for this repair.
 
 A flour dispenser prototype with a wide, open-front stand, SG90 rotary gate, **5V PWM vibration module (9000 RPM)**, USB-C ESP32 and MicroPython control. **Two removable printed snap-lock clips replace the V2 retaining bands.** No additional purchased latches or frame screws are required for hopper retention.

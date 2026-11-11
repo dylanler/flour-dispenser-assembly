@@ -46,3 +46,10 @@ Live socket/packing edits are analytic geometry previews, not fresh solid boolea
 The current target is larger doses +/-10 mg, superseding1mg. See the linked feasibility assessment. Existing firmware is open loop; the pocket scale has no data connection. Success in a geometry/browser test does not establish dispensing performance.
 
 Additional continuous nominal-rotation check: rotationally invariant conservative envelopes for the gate, horn and gate ties clear all12 static solids. This covers static interference between sampled angles for default parameters. Moving-part relative positions stay fixed. It does not establish tolerances or real horn dimensions.
+
+
+## Numbered wiring guide (2026-11-10)
+
+`scripts/build_wiring_guide.py` generates W01–W11 data and two SVGs. Assertions check unique occupied holes, separate power/signal strips, required ground/power membership, six F–M and five M–M leads, GPIO18/19 against firmware, and every drawn wire endpoint against its assigned breadboard hole. This is netlist/drawing consistency, not physical electrical testing.
+
+`python scripts/check_wiring_guide.py` verified all11 individual highlights, previous/next/reset-to-all navigation, the conditional W11 notice, diagram/data/assembly links, mobile width and absence of page errors. Root animation and fit viewer browser checks plus8 JavaScript/8 Python tests also passed. Header order and the exact motor module input circuit remain unverified.

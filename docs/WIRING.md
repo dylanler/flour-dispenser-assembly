@@ -1,43 +1,38 @@
-# Wiring — existing 5V PWM module and four-terminal USB-A adapter
+# Numbered end-to-end wiring plan
 
-Disconnect USB and external power while wiring. Match labels printed on your boards, not physical pin order in a drawing. The ESP32 mounts separately from the breadboard.
+**[Open the interactive W01–W11 guide](https://dylanler.github.io/flour-dispenser-assembly/hardware/wiring/WIRING_GUIDE.html)**. Select each wire to see both ends, jumper type and exact breadboard hole. Use the numbered map for wiring; the 3D cable routes are illustrative.
 
-Your **MacBook USB-C powers/programs the ESP32**. Your **5V USB-A brick → USB-A male to four screw terminals → two jumper leads → breadboard** supplies the servo and motor. The adapter is the solderless type shown by the user; no cable cutting or splicing is needed. Use a regulated 5V brick, preferably rated 2A. Join ESP32 GND to the breadboard ground bus.
+Unplug computer USB and the external brick before inserting/moving jumpers. Match actual component labels, not schematic header positions. GPIO18/19 refer to labelled classic ESP32 GPIOs, not the eighteenth/nineteenth physical header pin. ESP32 mounts separately from the breadboard.
 
-## Adapter connection and orientation
+MacBook → USB-C data cable → ESP32 supplies/programs the board. Regulated 5V USB-A brick (preferably 2A) → four-terminal USB-A male adapter → W01/W02 → breadboard supplies the servo/module. Use +5V/VCC/VBUS and GND only. D+ and D− stay empty; D− is not ground. The adapter rating 300V/8A is not USB output. Plug its metal USB-A end into the brick's port, support it on the bench, and route the two leads from the green terminal block. No brick-case wires, cut cable or soldering.
 
-1. Unplug the brick. Insert two suitable solid jumper ends into the adapter terminals marked **+5V / VCC / VBUS** and **GND / −**. Tighten securely and tug-check; no exposed strands/metal may bridge terminals.
-2. Connect +5V to the positive breadboard bus and GND to the ground bus. Leave **D+ and D− empty**. Do not infer order from the four positions in the model; read the real adapter's markings. Verify 5V output and polarity before attaching electronics, then unplug again to complete wiring.
-3. Plug the adapter's metal USB-A end directly into the brick's USB-A socket. Support both beside the stand and relieve wire tension. In the animation, the brick lies on its side; its port faces the adapter, and the two leads leave the green terminal block at the **opposite end**. The brick itself has no added top wire connections. The AC input/plug is omitted from the model.
+## Four five-hole junctions; long rails unused
 
-The listing's “300V / 8A” terminal rating does not describe USB output; the brick provides 5V. An adapter does not increase its available current. If terminal labels are absent, identify the connections by documentation/continuity rather than guessing. Never connect the power bus to D+ or D−. In particular, **D− is a data terminal, not ground**; use the terminal explicitly identified as GND.
+Use only the A–E side. Row 1 is +5V, row 3 common GND, row 5 servo signal, row 7 module IN. Each row's five holes join internally; different rows and the F–J side stay separate. The edge rails and other rows are unused; no bridges needed. Verify strip continuity unpowered. If markings differ, identify and label the equivalent five-hole groups first.
 
-![Power adapter orientation and connections](../public/hardware/power_connection.svg)
+![Every jumper, end to end](../public/hardware/wiring/end_to_end.svg)
 
-The breadboard buses are the “power junction,” not another module. Keep the servo's existing socket and use jumper pins; do not cut the servo cable. See [Parts](PARTS.md) for the six female-to-male and five male-to-male leads used here.
+![Exact breadboard hole assignment](../public/hardware/wiring/breadboard.svg)
 
-| From | To |
-|---|---|
-| Adapter +5V / VCC / VBUS | Breadboard positive bus |
-| Adapter GND / − | Breadboard ground bus |
-| ESP32 GND | Same ground bus |
-| Servo red | +5V bus |
-| Servo brown/black | Ground bus |
-| Servo orange/yellow | ESP32 GPIO18 |
-| Vibration module VCC / + | +5V bus |
-| Vibration module GND / − | Ground bus |
-| Vibration module IN / S | GPIO19 **only after compatibility check** |
-| ESP32 USB-C | Computer for flashing; USB power during use |
+| ID | Component end | Breadboard hole | Jumper ends |
+|---|---|---|---|
+| W01 | USB-A adapter +5V / VCC / VBUS | A1 | M–M / solid ended |
+| W02 | USB-A adapter GND / − | A3 | M–M / solid ended |
+| W03 | ESP32 GND | B3 | F–M |
+| W04 | ESP32 GPIO18 / IO18 / D18 | A5 | F–M |
+| W05 | ESP32 GPIO19 / IO19 / D19 | A7 | F–M |
+| W06 | SG90 red lead, female servo socket | B1 | M–M |
+| W07 | SG90 brown / black lead, female servo socket | C3 | M–M |
+| W08 | SG90 orange / yellow lead, female servo socket | B5 | M–M |
+| W09 | Vibration module VCC / + | C1 | F–M |
+| W10 | Vibration module GND / − | D3 | F–M |
+| W11 | Vibration module IN / S / signal | B7 | F–M |
 
-The external +5V bus does **not** connect to the ESP32 3V3 pin, any GPIO, or its USB/VIN supply. The two supply grounds must connect. Never power the motor or servo directly from a GPIO. This version uses the module's onboard driver.
+Six F–M and five M–M leads. F–M female sockets go on ESP32/module male headers; male ends go in the breadboard. Servo factory female socket cavities accept the three M–M jumper pins, identified by factory wire colour. Do not cut its cable. Secure the adapter's solid-ended leads so no exposed metal bridges terminals.
 
-![Schematic wiring overview](../public/hardware/wiring.svg)
+Complete paths: adapter +5V→W01→row 1→W06 servo red / W09 module VCC. Adapter GND→W02→row 3→W03 ESP32 GND / W07 servo ground / W10 module ground. GPIO18→W04→row 5→W08 servo signal. GPIO19→W05→row 7→W11 module IN, conditional on input verification. External +5V does not enter ESP32 VIN/5V, USB power, 3V3 or GPIO; its GND is joined through W03.
 
-## Breadboard details
-
-On a typical 400-point board, each group of five terminal holes connects together; opposite sides of the center channel do not. Long edge rails are separate buses and may be split. Confirm continuity on the actual board with power disconnected. Label the +5V and ground buses. Bridge split sections only when necessary, with power disconnected, and recheck for a short before powering.
-
-For signals, use a free five-hole group for each separate net: GPIO18 and servo signal in one group, GPIO19 and module IN in another. Do not join those groups to each other or to +5V. Male-to-female jumper leads connect male ESP32/module headers to the breadboard; male-to-male leads can connect the servo female socket to it. Secure leads so servo vibration cannot pull them out.
+Check the supply first with W01/W02 only: verify about +5V from row 1 to row 3, then unplug before adding component leads. Leave module VCC (W09) unplugged and IN (W11) disconnected for initial servo-only testing; an undocumented IN may float. Apply module power separately for a supervised compatibility check, and add W09/W11 with both sources unplugged only after verification. A low IN voltage reading alone does not prove logic compatibility.
 
 ## Check the motor module before GPIO19 connection
 
